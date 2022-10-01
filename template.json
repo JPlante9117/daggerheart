@@ -1,32 +1,90 @@
 {
-"Actor": {
-  "types": ["character"],
-  "htmlFields": ["biography"],
-  "character": {
-    "biography": "",
-    "health": {
-      "value": 10,
-      "min": 0,
-      "max": 10
-    },
-    "power": {
-      "value": 5,
-      "min": 0,
-      "max": 5
-    },
-    "attributes": {},
-    "groups": {}
+  "Actor": {
+    "types": [
+      "character"
+    ],
+    "htmlFields": [
+      "biography"
+    ],
+    "character": {
+      "biography": "",
+      "health": {
+        "value": 10,
+        "min": 0,
+        "max": 10
+      },
+      "power": {
+        "value": 0,
+        "min": 0,
+        "max": 20
+      },
+      "attributes": {
+        "strenght": {
+          "value": 0,
+          "label": "Strenght",
+          "max": 5,
+          "abbreviation": "STR"
+        },
+        "dexterity": {
+          "value": 0,
+          "label": "Dexterity",
+          "max": 5,
+          "abbreviation": "DEX"
+        },
+        "constitution": {
+          "value": 0,
+          "label": "Constitution",
+          "max": 5,
+          "abbreviation": "CON"
+        },
+        "inteligence": {
+          "value": 0,
+          "label": "Inteligence",
+          "max": 5,
+          "abbreviation": "INT"
+        },
+        "wisdom": {
+          "value": 0,
+          "label": "Wisdom",
+          "max": 5,
+          "abbreviation": "WIS"
+        },
+        "charisma": {
+          "value": 0,
+          "label": "CHA",
+          "max": 5,
+          "abbreviation": "STR"
+        }
+      },
+      "skills": {
+        "fight": {
+          "value": 0,
+          "label": "Fight",
+          "basedAttribute": "strenght",
+          "tempAttAbbreviation": "STR"
+        },
+        "diplomacy": {
+          "value": 0,
+          "label": "Diplomacy",
+          "basedAttribute": "charisma",
+          "tempAttAbbreviation": "CHA"
+        }
+      }
+    }
+  },
+  "Item": {
+    "types": [
+      "item"
+    ],
+    "htmlFields": [
+      "description"
+    ],
+    "item": {
+      "description": "",
+      "quantity": 1,
+      "weight": 0,
+      "attributes": {},
+      "groups": {}
+    }
   }
-},
-"Item": {
-  "types": ["item"],
-  "htmlFields": ["description"],
-  "item": {
-    "description": "",
-    "quantity": 1,
-    "weight": 0,
-    "attributes": {},
-    "groups": {}
-  }
-}
 }

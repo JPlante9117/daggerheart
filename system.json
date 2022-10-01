@@ -1,18 +1,22 @@
 {
   "id": "worldbuilding",
-  "version": "0.7.1",
+  "version": "1.0.0",
   "title": "Simple World-Building",
-  "url": "https://gitlab.com/foundrynet/worldbuilding/",
-  "description": "A minimalist game system which provides configurable Actor and Item templates to support free-form system agnostic game-play.",
+  "url": "TBD",
+  "description": "This is just a POC, yet...",
   "license": "LICENSE.txt",
   "authors": [
     {
-      "name": "Atropos",
+      "name": "Antonio Montanha",
       "url": "https://foundryvtt.com"
     }
   ],
-  "esmodules": ["module/simple.js"],
-  "styles": ["styles/simple.css"],
+  "esmodules": [
+    "module/simple.js"
+  ],
+  "styles": [
+    "styles/simple.css"
+  ],
   "packs": [],
   "languages": [
     {
@@ -22,7 +26,7 @@
     }
   ],
   "compatibility": {
-    "minimum": "10",
+    "minimum": "9",
     "verified": "10.282",
     "maximum": "10"
   },
@@ -30,6 +34,6 @@
   "gridUnits": "ft",
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "power",
-  "manifest": "https://raw.githubusercontent.com/foundryvtt/worldbuilding/master/system.json",
-  "download": "https://github.com/foundryvtt/worldbuilding/archive/refs/tags/release-071.zip"
+  "manifest": "",
+  "download": ""
 }

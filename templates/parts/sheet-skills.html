@@ -1,0 +1,17 @@
+<section class="attributes-group">
+    <ol class="attributes-list">
+        {{#each skills as |skill key|}}
+        <li class="attribute flexrow" data-attribute="{{#if skill.group}}{{skill.group}}.{{/if}}{{key}}">
+            <input type="hidden" class="attribute-key" type="text"
+                name="system.skills.{{#if skill.group}}{{skill.group}}.{{/if}}{{key}}.key" value="{{key}}" />
+            {{!-- Handle other input types. --}}
+            <input class="attribute-label" type="text"
+                name="system.skills.{{#if skill.group}}{{skill.group}}.{{/if}}{{key}}.label"
+                value="{{skill.label}} ({{skill.tempAttAbbreviation}})" disabled="disabled" />
+            <input class=" attribute-value" type="text"
+                name="system.skills.{{#if skill.group}}{{skill.group}}.{{/if}}{{key}}.value" value="{{skill.value}}"
+                data-dtype="{{skill.dtype}}" />
+        </li>
+        {{/each}}
+    </ol>
+</section>
