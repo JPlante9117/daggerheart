@@ -288,3 +288,15 @@
   min-width: 460px;
   min-height: 400px;
 }
+
+.attrCircle {
+  height: 10px;
+  width: 10px;
+  border: 1px solid black;
+  border-radius: 100%;
+  background-color: green;
+}
+
+.attrCircle .damaged {
+  background-color: red;
+}

@@ -22,9 +22,9 @@
 
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="attributes">Main</a>
         <a class="item" data-tab="description">Description</a>
         <a class="item" data-tab="items">Items</a>
-        <a class="item" data-tab="attributes">Attributes</a>
     </nav>
 
     {{!-- Sheet Body --}}
@@ -102,7 +102,7 @@
             </header>
 
             {{!-- Render the attribute list partial. --}}
-            {{> "systems/worldbuilding/templates/parts/sheet-attributes.html" attributes=systemData.ungroupedAttributes
+            {{> "systems/worldbuilding/templates/parts/sheet-attributes.html" attributes=systemData.attributes
             dtypes=dtypes}}
         </div>
 

@@ -51,23 +51,66 @@
         },
         "charisma": {
           "value": 0,
-          "label": "CHA",
+          "label": "Charisma",
           "max": 5,
-          "abbreviation": "STR"
+          "abbreviation": "CHA"
         }
       },
       "skills": {
         "fight": {
           "value": 0,
           "label": "Fight",
-          "basedAttribute": "strenght",
-          "tempAttAbbreviation": "STR"
+          "basedAttribute": "strenght"
+        },
+        "athletics": {
+          "value": 0,
+          "label": "Athletics",
+          "basedAttribute": "strenght"
+        },
+        "acrobatics": {
+          "value": 0,
+          "label": "Acrobatics",
+          "basedAttribute": "dexterity"
+        },
+        "marksmanship": {
+          "value": 0,
+          "label": "Marksmanship",
+          "basedAttribute": "dexterity"
+        },
+        "stealth": {
+          "value": 0,
+          "label": "Stealth",
+          "basedAttribute": "dexterity"
+        },
+        "investigation": {
+          "value": 0,
+          "label": "Investigation",
+          "basedAttribute": "inteligence"
+        },
+        "deception": {
+          "value": 0,
+          "label": "Deception",
+          "basedAttribute": "charisma"
+        },
+        "medicine": {
+          "value": 0,
+          "label": "Medicine",
+          "basedAttribute": "wisdom"
+        },
+        "survival": {
+          "value": 0,
+          "label": "Survival",
+          "basedAttribute": "wisdom"
+        },
+        "performance": {
+          "value": 0,
+          "label": "Performance",
+          "basedAttribute": "charisma"
         },
         "diplomacy": {
           "value": 0,
           "label": "Diplomacy",
-          "basedAttribute": "charisma",
-          "tempAttAbbreviation": "CHA"
+          "basedAttribute": "charisma"
         }
       }
     }

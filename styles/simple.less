@@ -34,6 +34,7 @@
       padding: 0px;
       margin: 5px 0;
       border-bottom: 0;
+
       input {
         width: 100%;
         height: 100%;
@@ -48,6 +49,7 @@
     margin-top: 10px;
     float: left;
     text-align: center;
+
     input {
       width: 100px;
       height: 28px;
@@ -73,13 +75,15 @@
 
   .sheet-body {
     overflow: hidden;
+
     .tab {
       height: 100%;
       overflow-y: auto;
     }
   }
 
-  .editor, .editor-content {
+  .editor,
+  .editor-content {
     height: 100%;
   }
 
@@ -191,7 +195,7 @@
     margin: 0;
     padding: 0;
 
-    li > * {
+    li>* {
       margin: 0 3px;
       height: 28px;
       line-height: 24px;
@@ -288,4 +292,17 @@
 .worldbuilding.sheet.item {
   min-width: 460px;
   min-height: 400px;
+}
+
+.attrCircle {
+  height: 10px;
+  width: 10px;
+  border: 1px solid black;
+  border-radius: 100%;
+  background-color: green;
+
+  .damaged {
+    background-color: red;
+  }
+
 }

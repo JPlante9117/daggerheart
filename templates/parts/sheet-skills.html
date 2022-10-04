@@ -7,7 +7,7 @@
             {{!-- Handle other input types. --}}
             <input class="attribute-label" type="text"
                 name="system.skills.{{#if skill.group}}{{skill.group}}.{{/if}}{{key}}.label"
-                value="{{skill.label}} ({{skill.tempAttAbbreviation}})" disabled="disabled" />
+                value="{{skill.label}} ({{skill.attrAbbreviation}})" disabled="disabled" />
             <input class=" attribute-value" type="text"
                 name="system.skills.{{#if skill.group}}{{skill.group}}.{{/if}}{{key}}.value" value="{{skill.value}}"
                 data-dtype="{{skill.dtype}}" />

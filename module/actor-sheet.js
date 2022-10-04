@@ -28,6 +28,9 @@ export class SimpleActorSheet extends ActorSheet {
     EntitySheetHelper.getAttributeData(context.data);
     context.shorthand = !!game.settings.get("worldbuilding", "macroShorthand");
     context.systemData = context.data.system;
+    const skillArray = Object.keys(context.systemData.skills)
+    skillArray.forEach(skill => { context.systemData.skills[skill].attrAbbreviation = context.systemData.attributes[context.systemData.skills[skill].basedAttribute].abbreviation })
+
     context.dtypes = ATTRIBUTE_TYPES;
     context.biographyHTML = await TextEditor.enrichHTML(context.systemData.biography, {
       secrets: this.document.isOwner,

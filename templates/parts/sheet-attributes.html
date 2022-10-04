@@ -8,7 +8,8 @@
             {{!-- Handle other input types. --}}
             <input class="attribute-label" type="text"
                 name="system.attributes.{{#if attr.group}}{{attr.group}}.{{/if}}{{key}}.label" value="{{attr.label}}"
-                placeholder="{{localize " SIMPLE.AttributeLabel"}}" />
+                placeholder="{{localize " SIMPLE.AttributeLabel"}}" disabled="disabled" />
+
             <input class="attribute-value" type="text"
                 name="system.attributes.{{#if attr.group}}{{attr.group}}.{{/if}}{{key}}.value" value="{{attr.value}}"
                 data-dtype="{{attr.dtype}}" placeholder="{{localize " SIMPLE.AttributeValue"}}" />
