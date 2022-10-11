@@ -52,6 +52,21 @@ export class SimpleActorSheet extends ActorSheet {
     html.find(".attributes").on("click", ".attribute-control", EntitySheetHelper.onClickAttributeControl.bind(this));
     html.find(".groups").on("click", ".group-control", EntitySheetHelper.onClickAttributeGroupControl.bind(this));
     html.find(".attributes").on("click", "a.attribute-roll", EntitySheetHelper.onAttributeRoll.bind(this));
+    html.find(".change-attribute").on("click", (ev) => {
+
+      const attributeKey = $(ev.currentTarget).data("attribute");
+      // const attribute = this.actor.data.data.attribute[attributeName];
+      const value = this.actor.system.attributes[attributeKey].value
+      const ttt = ["system.attributes." + [attributeKey] + ".value"]
+      this.actor.update({
+        ["system.attributes." + [attributeKey] + ".value"]: 1
+      });
+      // context.systemData = context.data.system;
+      // const skillArray = Object.keys(context.systemData.skills)
+      // skillArray.forEach(skill => { context.systemData.skills[skill].attrAbbreviation = context.systemData.attributes[context.systemData.skills[skill].basedAttribute].abbreviation })
+      // Do the logic here!
+    });
+
 
     // Item Controls
     html.find(".item-control").click(this._onItemControl.bind(this));

@@ -195,7 +195,7 @@
     margin: 0;
     padding: 0;
 
-    li>* {
+    input {
       margin: 0 3px;
       height: 28px;
       line-height: 24px;
@@ -203,6 +203,20 @@
       border: none;
       border-radius: 0;
       border-bottom: 1px solid #AAA;
+    }
+
+    div {
+      flex-direction: row;
+      float: left;
+      margin: 0 1px;
+      align-items: center;
+    }
+
+    a {
+      flex-direction: row;
+      float: left;
+      margin: 0 1px;
+      align-items: center;
     }
 
     .attribute-col {
@@ -299,7 +313,7 @@
   width: 10px;
   border: 1px solid black;
   border-radius: 100%;
-  background-color: green;
+  background-color: rgb(230, 241, 230);
 
   .damaged {
     background-color: red;
