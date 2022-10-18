@@ -1,5 +1,5 @@
 <section class="attributes-group">
-    <div class="attributes-list">
+    <div class="skills-list">
         {{#each skills as |skill key|}}
         <div class="attribute flexrow" data-attribute="{{#if skill.group}}{{skill.group}}.{{/if}}{{key}}">
             <input type="hidden" class="attribute-key" type="text"
@@ -8,7 +8,7 @@
             <input class="attribute-label" type="text"
                 name="system.skills.{{#if skill.group}}{{skill.group}}.{{/if}}{{key}}.label"
                 value="{{skill.label}} ({{skill.attrAbbreviation}})" disabled="disabled" />
-            <input class=" attribute-value" type="text"
+            <input class="attribute-value" type="number"
                 name="system.skills.{{#if skill.group}}{{skill.group}}.{{/if}}{{key}}.value" value="{{skill.value}}"
                 data-dtype="{{skill.dtype}}" />
         </div>

@@ -28,9 +28,10 @@ export class SimpleActorSheet extends ActorSheet {
     EntitySheetHelper.getAttributeData(context.data);
     context.shorthand = !!game.settings.get("worldbuilding", "macroShorthand");
     context.systemData = context.data.system;
-    const skillArray = Object.keys(context.systemData.skills)
-    skillArray.forEach(skill => { context.systemData.skills[skill].attrAbbreviation = context.systemData.attributes[context.systemData.skills[skill].basedAttribute].abbreviation })
-
+    const skillArray = Object.keys(context.systemData.skills);
+    skillArray.forEach(skill => { context.systemData.skills[skill].attrAbbreviation = context.systemData.attributes[context.systemData.skills[skill].basedAttribute].abbreviation });
+    const keysTESTE = Object.keys(context.systemData.attributes);
+    context.systemData.keysTESTE = keysTESTE
     context.dtypes = ATTRIBUTE_TYPES;
     context.biographyHTML = await TextEditor.enrichHTML(context.systemData.biography, {
       secrets: this.document.isOwner,
@@ -53,18 +54,13 @@ export class SimpleActorSheet extends ActorSheet {
     html.find(".groups").on("click", ".group-control", EntitySheetHelper.onClickAttributeGroupControl.bind(this));
     html.find(".attributes").on("click", "a.attribute-roll", EntitySheetHelper.onAttributeRoll.bind(this));
     html.find(".change-attribute").on("click", (ev) => {
-
       const attributeKey = $(ev.currentTarget).data("attribute");
-      // const attribute = this.actor.data.data.attribute[attributeName];
-      const value = this.actor.system.attributes[attributeKey].value
-      const ttt = ["system.attributes." + [attributeKey] + ".value"]
+      let value = this.actor.system.attributes[attributeKey].value
+      value = value - 1
       this.actor.update({
-        ["system.attributes." + [attributeKey] + ".value"]: 1
+        ["system.attributes." + [attributeKey] + ".value"]: value
       });
-      // context.systemData = context.data.system;
-      // const skillArray = Object.keys(context.systemData.skills)
-      // skillArray.forEach(skill => { context.systemData.skills[skill].attrAbbreviation = context.systemData.attributes[context.systemData.skills[skill].basedAttribute].abbreviation })
-      // Do the logic here!
+
     });
 
 

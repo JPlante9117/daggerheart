@@ -1,6 +1,5 @@
 <section class="attributes-group">
     <div class="attributes-list">
-
         {{#each attributes as |attr key|}}
         <div class="attribute flexrow" data-attribute="{{#if attr.group}}{{attr.group}}.{{/if}}{{key}}">
 
@@ -10,16 +9,21 @@
             {{!-- Handle other input types. --}}
             <input class="attribute-label" type="text"
                 name="system.attributes.{{#if attr.group}}{{attr.group}}.{{/if}}{{key}}.label" value="{{attr.label}}"
-                placeholder="{{localize " SIMPLE.AttributeLabel"}}" disabled="disabled" />
+                placeholder="{{localize " SIMPLE.AttributeLabel"}}" disabled="disabled" style="flex-basis:60%;" />
+            <!-- 
             <div>
                 <a class="attrCircle change-attribute" data-attribute="{{key}}"> </a>
+            </div> -->
 
-
-            </div>
-
-            <input class="attribute-value" type="text"
+            <input class="attribute-value" type="number"
                 name="system.attributes.{{#if attr.group}}{{attr.group}}.{{/if}}{{key}}.value" value="{{attr.value}}"
-                data-dtype="{{attr.dtype}}" placeholder="{{localize " SIMPLE.AttributeValue"}}" />
+                data-dtype="{{attr.dtype}}" placeholder="{{localize " SIMPLE.AttributeValue"}}" style="flex-basis:2%" />
+
+
+            <input class="attribute-value" type="number"
+                name="system.attributes.{{#if attr.group}}{{attr.group}}.{{/if}}{{key}}.max" value="{{attr.max}}"
+                data-dtype="{{attr.dtype}}" placeholder="{{localize " SIMPLE.AttributeValue"}}" style="flex-basis:2%" />
+
         </div>
         {{/each}}
     </div>

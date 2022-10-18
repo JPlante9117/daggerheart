@@ -12,7 +12,7 @@
   height: 100%;
 }
 .worldbuilding .sheet-header {
-  flex: 0 0 100px;
+  flex: 0 0 150px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -41,14 +41,14 @@
   margin: 0;
 }
 .worldbuilding .resource {
-  width: 50%;
+  width: 25%;
   height: 40px;
   margin-top: 10px;
   float: left;
   text-align: center;
 }
 .worldbuilding .resource input {
-  width: 100px;
+  width: 50px;
   height: 28px;
 }
 .worldbuilding .tabs {
@@ -162,6 +162,19 @@
   text-align: left;
   font-weight: bold;
 }
+.worldbuilding .skills-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  align-items: center;
+  padding: 0 5px;
+  margin: 5px 0;
+  background: #cfcdc2;
+  border: 1px solid #AAA;
+  border-radius: 2px;
+  text-align: left;
+  font-weight: bold;
+}
 .worldbuilding .attributes-list {
   list-style: none;
   margin: 0;
@@ -194,6 +207,43 @@
   line-height: 1;
 }
 .worldbuilding .attributes-list .attribute-col input {
+  font-size: 11px;
+  text-align: center;
+  line-height: 1;
+  height: 50%;
+}
+.worldbuilding .skills-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.worldbuilding .skills-list input {
+  margin: 0 3px;
+  height: 28px;
+  line-height: 24px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #AAA;
+}
+.worldbuilding .skills-list div {
+  flex-direction: row;
+  float: left;
+  margin: 0 1px;
+  align-items: center;
+}
+.worldbuilding .skills-list a {
+  flex-direction: row;
+  float: left;
+  margin: 0 1px;
+  align-items: center;
+}
+.worldbuilding .skills-list .attribute-col label {
+  font-size: 10px;
+  text-align: center;
+  line-height: 1;
+}
+.worldbuilding .skills-list .attribute-col input {
   font-size: 11px;
   text-align: center;
   line-height: 1;
