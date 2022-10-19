@@ -8,22 +8,28 @@
             <h1 class="charname">
                 <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
             </h1>
-            <div>
-                <a style="float:left; vertical-align: middle;">Health Points:</a>
+            <div style="display: flex; flex-wrap:nowrap;  align-items:baseline;">
+                <a style="float:left; vertical-align: middle;">HP:</a>
                 <div class="resource">
                     <input type="number" name="system.health.value" value="{{systemData.health.value}}" />
                     <span> / </span>
                     <input type="number" name="system.health.max" value="{{systemData.health.max}}" />
                 </div>
-            </div>
-            <div>
                 <a style="float:left;">Willpower:</a>
                 <div class="resource">
                     <input type="number" name="system.power.value" value="{{systemData.power.value}}" />
                     <span> / </span>
                     <input type="number" name="system.power.max" value="{{systemData.power.max}}" />
                 </div>
+                <a style="float:left;">Corruption:</a>
+                <div class="resource">
+                    <input type="number" name="system.corruption.value" value="{{systemData.corruption.value}}" />
+                    <span> / </span>
+                    <input type="number" name="system.corruption.max" value="{{systemData.corruption.max}}" />
+                </div>
+
             </div>
+
 
         </div>
     </header>
@@ -31,12 +37,37 @@
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
         <a class="item" data-tab="attributes">Main</a>
-        <a class="item" data-tab="description">Description</a>
+        <a class="item" data-tab="featuresAndSpells">Features & Spells</a>
         <a class="item" data-tab="items">Items</a>
+        <!-- <a class="item" data-tab="description">Bio</a> -->
     </nav>
 
     {{!-- Sheet Body --}}
     <section class="sheet-body">
+
+        {{!-- Attributes and Skills Tab --}}
+        <div style="float: left; width: 50%" class=" tab attributes" data-group="primary" data-tab="attributes">
+            <header class="attributes-header flexrow">
+                <span class="attribute-label" style="flex-basis:75%">{{localize "SIMPLE.AttributeLabel"}}</span>
+                <!-- <span class="attribute-label"></span> This is for the circle of attributes -->
+                <span class="attribute-value" style="flex-basis:20%">{{localize "SIMPLE.AttributeValue"}}</span>
+            </header>
+            {{!-- Render the attribute list partial. --}}
+            {{> "systems/worldbuilding/templates/parts/sheet-attributes.html" attributes=systemData.attributes
+            dtypes=dtypes}}
+        </div>
+
+        <div style="float: left; width: 50%" class=" tab attributes" data-group="primary" data-tab="attributes">
+            <header class="skills-header flexrow">
+                <span class="attribute-label">{{localize "SIMPLE.SkillLabel"}}</span>
+                <span class="attribute-value">{{localize "SIMPLE.SkillValue"}}</span>
+            </header>
+
+            {{!-- Render the skills list partial. --}}
+            {{> "systems/worldbuilding/templates/parts/sheet-skills.html" skills=systemData.skills test=
+            context.systemData.keysTESTE
+            dtypes=dtypes}}
+        </div>
 
         {{!-- Biography Tab --}}
         <div class="tab description" data-group="primary" data-tab="description">
@@ -102,31 +133,9 @@
             </p>
         </div>
 
-        {{!-- Attributes and Skills Tab --}}
-        <div style="float: left; width: 50%" class=" tab attributes" data-group="primary" data-tab="attributes">
-            <header class="attributes-header flexrow">
-                <span class="attribute-label" style="flex-basis:75%">{{localize "SIMPLE.AttributeLabel"}}</span>
-                <!-- <span class="attribute-label"></span> This is for the circle of attributes -->
-                <span class="attribute-value" style="flex-basis:20%">{{localize "SIMPLE.AttributeValue"}}</span>
-            </header>
-            {{!-- Render the attribute list partial. --}}
-            {{> "systems/worldbuilding/templates/parts/sheet-attributes.html" attributes=systemData.attributes
-            dtypes=dtypes}}
+        {{!-- Biography Tab --}}
+        <div class="tab description" data-group="primary" data-tab="description">
+            {{editor biographyHTML target="system.biography" button=true editable=editable engine="prosemirror"}}
         </div>
-
-        <div style="float: left; width: 50%" class=" tab attributes" data-group="primary" data-tab="attributes">
-            <header class="skills-header flexrow">
-                <span class="attribute-label">{{localize "SIMPLE.SkillLabel"}}</span>
-                <span class="attribute-value">{{localize "SIMPLE.SkillValue"}}</span>
-            </header>
-
-            {{!-- Render the skills list partial. --}}
-            {{> "systems/worldbuilding/templates/parts/sheet-skills.html" skills=systemData.skills test=
-            context.systemData.keysTESTE
-            dtypes=dtypes}}
-        </div>
-
-
-
     </section>
 </form>

@@ -18,6 +18,11 @@
         "min": 0,
         "max": 20
       },
+      "corruption": {
+        "value": 0,
+        "min": 0,
+        "max": 20
+      },
       "attributes": {
         "strenght": {
           "value": 0,
