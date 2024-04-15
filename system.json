@@ -1,13 +1,13 @@
 {
-  "id": "worldbuilding",
+  "id": "daggerheart",
   "version": "1.0.0",
-  "title": "Simple World-Building",
+  "title": "Daggerheart",
   "url": "TBD",
   "description": "This is just a POC, yet...",
   "license": "LICENSE.txt",
   "authors": [
     {
-      "name": "Antonio Montanha",
+      "name": "Jacques Plante",
       "url": "https://foundryvtt.com"
     }
   ],

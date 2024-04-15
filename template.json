@@ -1,7 +1,8 @@
 {
   "Actor": {
     "types": [
-      "character"
+      "character",
+      "adversary"
     ],
     "htmlFields": [
       "biography"
@@ -9,115 +10,93 @@
     "character": {
       "biography": "",
       "health": {
-        "value": 10,
-        "min": 0,
-        "max": 10
-      },
-      "power": {
         "value": 0,
         "min": 0,
-        "max": 20
+        "max": 12,
+        "pmax": 6
       },
-      "corruption": {
+      "stress": {
         "value": 0,
         "min": 0,
-        "max": 20
+        "max": 12,
+        "pmax": 6
+      },
+      "armor_slots": {
+        "value": 0,
+        "min": 0,
+        "max": 12,
+        "pmax": 6
       },
       "attributes": {
-        "strenght": {
+        "agility": {
           "value": 0,
-          "label": "Strenght",
+          "label": "Agility",
+          "max": 5,
+          "abbreviation": "AGI"
+        },
+        "strength": {
+          "value": 0,
+          "label": "Strength",
           "max": 5,
           "abbreviation": "STR"
         },
-        "dexterity": {
+        "finesse": {
           "value": 0,
-          "label": "Dexterity",
+          "label": "Finesse",
           "max": 5,
-          "abbreviation": "DEX"
+          "abbreviation": "FIN"
         },
-        "constitution": {
+        "instinct": {
           "value": 0,
-          "label": "Constitution",
+          "label": "Instinct",
           "max": 5,
-          "abbreviation": "CON"
+          "abbreviation": "INS"
         },
-        "inteligence": {
+        "presence": {
           "value": 0,
-          "label": "Inteligence",
+          "label": "Presence",
           "max": 5,
-          "abbreviation": "INT"
+          "abbreviation": "PRE"
         },
-        "wisdom": {
+        "knowledge": {
           "value": 0,
-          "label": "Wisdom",
+          "label": "Knowledge",
           "max": 5,
-          "abbreviation": "WIS"
+          "abbreviation": "KNO"
         },
-        "charisma": {
+        "evasion": {
           "value": 0,
-          "label": "Charisma",
-          "max": 5,
-          "abbreviation": "CHA"
+          "label": "Evasion",
+          "max": 30,
+          "abbreviation": "EVA"
+        },
+        "armor": {
+          "value": 0,
+          "label": "Armor",
+          "max": 30,
+          "abbreviation": "ARM"
         }
       },
-      "skills": {
-        "fight": {
-          "value": 0,
-          "label": "Fight",
-          "basedAttribute": "strenght"
+      "thresholds": {
+        "minor": {
+          "value": 1,
+          "label": "Minor Damage",
+          "abbreviation": "MINHP"
         },
-        "athletics": {
+        "major": {
           "value": 0,
-          "label": "Athletics",
-          "basedAttribute": "strenght"
+          "label": "Major Damage",
+          "abbreviation": "MAJHP"
         },
-        "acrobatics": {
+        "severe": {
           "value": 0,
-          "label": "Acrobatics",
-          "basedAttribute": "dexterity"
-        },
-        "marksmanship": {
-          "value": 0,
-          "label": "Marksmanship",
-          "basedAttribute": "dexterity"
-        },
-        "stealth": {
-          "value": 0,
-          "label": "Stealth",
-          "basedAttribute": "dexterity"
-        },
-        "investigation": {
-          "value": 0,
-          "label": "Investigation",
-          "basedAttribute": "inteligence"
-        },
-        "deception": {
-          "value": 0,
-          "label": "Deception",
-          "basedAttribute": "charisma"
-        },
-        "medicine": {
-          "value": 0,
-          "label": "Medicine",
-          "basedAttribute": "wisdom"
-        },
-        "survival": {
-          "value": 0,
-          "label": "Survival",
-          "basedAttribute": "wisdom"
-        },
-        "performance": {
-          "value": 0,
-          "label": "Performance",
-          "basedAttribute": "charisma"
-        },
-        "diplomacy": {
-          "value": 0,
-          "label": "Diplomacy",
-          "basedAttribute": "charisma"
+          "label": "Severe Damage",
+          "abbreviation": "SEVHP"
         }
       }
+    },
+    "adversary": {
+
     }
   },
   "Item": {
