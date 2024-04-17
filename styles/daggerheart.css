@@ -1,20 +1,20 @@
-.worldbuilding {
+.daggerheart {
   /* Sheet Tabs */
   /* Items List */
   /* Attributes */
 }
 
-.worldbuilding .window-content {
+.daggerheart .window-content {
   height: 100%;
   padding: 5px;
   overflow-y: hidden;
 }
 
-.worldbuilding form {
+.daggerheart form {
   height: 100%;
 }
 
-.worldbuilding .sheet-header {
+.daggerheart .sheet-header {
   flex: 0 0 150px;
   overflow: hidden;
   display: flex;
@@ -24,31 +24,31 @@
   margin-bottom: 10px;
 }
 
-.worldbuilding .sheet-header .profile-img {
+.daggerheart .sheet-header .profile-img {
   flex: 0 0 100px;
   height: 100px;
   margin-right: 10px;
 }
 
-.worldbuilding .sheet-header .header-fields {
+.daggerheart .sheet-header .header-fields {
   flex: 1;
   height: 100px;
 }
 
-.worldbuilding .sheet-header h1.charname {
+.daggerheart .sheet-header h1.charname {
   height: 50px;
   padding: 0px;
   margin: 5px 0;
   border-bottom: 0;
 }
 
-.worldbuilding .sheet-header h1.charname input {
+.daggerheart .sheet-header h1.charname input {
   width: 100%;
   height: 100%;
   margin: 0;
 }
 
-.worldbuilding .resource {
+.daggerheart .resource {
   width: 25%;
   height: 40px;
   margin-top: 10px;
@@ -56,49 +56,49 @@
   text-align: center;
 }
 
-.worldbuilding .resource input {
+.daggerheart .resource input {
   width: 40px;
   height: 28px;
 }
 
-.worldbuilding .tabs {
+.daggerheart .tabs {
   flex: 0 0 40px;
   border-top: 1px solid #AAA;
   border-bottom: 1px solid #AAA;
 }
 
-.worldbuilding .tabs .item {
+.daggerheart .tabs .item {
   line-height: 40px;
   font-weight: bold;
 }
 
-.worldbuilding .tabs .item.active {
+.daggerheart .tabs .item.active {
   text-decoration: underline;
   text-shadow: none;
 }
 
-.worldbuilding .sheet-body {
+.daggerheart .sheet-body {
   overflow: hidden;
 }
 
-.worldbuilding .sheet-body .tab {
+.daggerheart .sheet-body .tab {
   height: 100%;
   overflow-y: auto;
 }
 
-.worldbuilding .editor,
-.worldbuilding .editor-content {
+.daggerheart .editor,
+.daggerheart .editor-content {
   height: 100%;
 }
 
-.worldbuilding .item-list {
+.daggerheart .item-list {
   list-style: none;
   margin: 7px 0;
   padding: 0;
   overflow-y: auto;
 }
 
-.worldbuilding .item-list .item {
+.daggerheart .item-list .item {
   min-height: 30px;
   line-height: 24px;
   padding: 3px 0;
@@ -106,20 +106,20 @@
   align-items: stretch;
 }
 
-.worldbuilding .item-list .item img {
+.daggerheart .item-list .item img {
   flex: 0 0 24px;
   margin-right: 5px;
 }
 
-.worldbuilding .item-list .item-name {
+.daggerheart .item-list .item-name {
   margin: 0;
 }
 
-.worldbuilding .item-list .item-controls {
+.daggerheart .item-list .item-controls {
   flex: 0 0 36px;
 }
 
-.worldbuilding .item-list .item-buttons {
+.daggerheart .item-list .item-buttons {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -128,26 +128,26 @@
   justify-content: flex-start;
 }
 
-.worldbuilding .item-list .item-button {
+.daggerheart .item-list .item-button {
   line-height: 1;
   font-size: 11px;
   flex: none;
   width: auto;
 }
 
-.worldbuilding .attributes {
+.daggerheart .attributes {
   position: relative;
 }
 
-.worldbuilding .attributes .attribute-control,
-.worldbuilding .attributes .group-control {
+.daggerheart .attributes .attribute-control,
+.daggerheart .attributes .group-control {
   flex: 0 0 20px;
   text-align: center;
   line-height: 28px;
   border: none;
 }
 
-.worldbuilding .attributes .attribute-roll {
+.daggerheart .attributes .attribute-roll {
   flex: 0 0 20px;
   text-align: center;
   border-bottom: none;
@@ -156,12 +156,12 @@
   justify-content: center;
 }
 
-.worldbuilding .attributes .group-prefix {
+.daggerheart .attributes .group-prefix {
   height: 31px;
   margin-right: 10px;
 }
 
-.worldbuilding .attributes .button {
+.daggerheart .attributes .button {
   width: 100%;
   flex: 1;
   margin: 0;
@@ -173,12 +173,12 @@
   display: block;
 }
 
-.worldbuilding .attributes .attribute-key {
+.daggerheart .attributes .attribute-key {
   background: transparent;
   border: none;
 }
 
-.worldbuilding .attributes-header {
+.daggerheart .attributes-header {
   position: sticky;
   top: 0;
   left: 0;
@@ -192,7 +192,7 @@
   font-weight: bold;
 }
 
-.worldbuilding .skills-header {
+.daggerheart .skills-header {
   position: sticky;
   top: 0;
   left: 0;
@@ -206,13 +206,13 @@
   font-weight: bold;
 }
 
-.worldbuilding .attributes-list {
+.daggerheart .attributes-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.worldbuilding .attributes-list input {
+.daggerheart .attributes-list input {
   margin: 0 3px;
   height: 28px;
   line-height: 24px;
@@ -222,40 +222,40 @@
   border-bottom: 1px solid #AAA;
 }
 
-.worldbuilding .attributes-list div {
+.daggerheart .attributes-list div {
   flex-direction: row;
   float: left;
   margin: 0 1px;
   align-items: center;
 }
 
-.worldbuilding .attributes-list a {
+.daggerheart .attributes-list a {
   flex-direction: row;
   float: left;
   margin: 0 1px;
   align-items: center;
 }
 
-.worldbuilding .attributes-list .attribute-col label {
+.daggerheart .attributes-list .attribute-col label {
   font-size: 10px;
   text-align: center;
   line-height: 1;
 }
 
-.worldbuilding .attributes-list .attribute-col input {
+.daggerheart .attributes-list .attribute-col input {
   font-size: 11px;
   text-align: center;
   line-height: 1;
   height: 50%;
 }
 
-.worldbuilding .skills-list {
+.daggerheart .skills-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.worldbuilding .skills-list input {
+.daggerheart .skills-list input {
   margin: 0 3px;
   height: 28px;
   line-height: 24px;
@@ -265,60 +265,60 @@
   border-bottom: 1px solid #AAA;
 }
 
-.worldbuilding .skills-list div {
+.daggerheart .skills-list div {
   flex-direction: row;
   float: left;
   margin: 0 1px;
   align-items: center;
 }
 
-.worldbuilding .skills-list a {
+.daggerheart .skills-list a {
   flex-direction: row;
   float: left;
   margin: 0 1px;
   align-items: center;
 }
 
-.worldbuilding .skills-list .attribute-col label {
+.daggerheart .skills-list .attribute-col label {
   font-size: 10px;
   text-align: center;
   line-height: 1;
 }
 
-.worldbuilding .skills-list .attribute-col input {
+.daggerheart .skills-list .attribute-col input {
   font-size: 11px;
   text-align: center;
   line-height: 1;
   height: 50%;
 }
 
-.worldbuilding .attribute input[type="text"]::placeholder,
-.worldbuilding .group-header input[type="text"]::placeholder {
+.daggerheart .attribute input[type="text"]::placeholder,
+.daggerheart .group-header input[type="text"]::placeholder {
   opacity: 0;
   transition: opacity 0.25s ease-in-out;
 }
 
-.worldbuilding .attribute input[type="text"]:focus::placeholder,
-.worldbuilding .group-header input[type="text"]:focus::placeholder {
+.daggerheart .attribute input[type="text"]:focus::placeholder,
+.daggerheart .group-header input[type="text"]:focus::placeholder {
   opacity: 1;
 }
 
-.worldbuilding .group-controls {
+.daggerheart .group-controls {
   margin: 5px;
 }
 
-.worldbuilding .groups-list {
+.daggerheart .groups-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.worldbuilding .group {
+.daggerheart .group {
   margin: 5px 0 0;
   padding: 0;
 }
 
-.worldbuilding .group-header {
+.daggerheart .group-header {
   align-items: center;
   background: rgba(0, 0, 0, 0.05);
   border: 1px solid #AAA;
@@ -326,8 +326,8 @@
   padding: 2px 5px;
 }
 
-.worldbuilding .group-key,
-.worldbuilding .group-label {
+.daggerheart .group-key,
+.daggerheart .group-label {
   font-weight: bold;
   border: none;
   border-bottom: 1px solid #AAA;
@@ -336,26 +336,26 @@
   margin-right: 6px;
 }
 
-.worldbuilding .group-key {
+.daggerheart .group-key {
   opacity: 0.75;
 }
 
-.worldbuilding .group-label {
+.daggerheart .group-label {
   flex: 2;
 }
 
-.worldbuilding .group-dtype {
+.daggerheart .group-dtype {
   height: 24px;
   flex: 0 0 116px;
   margin: 0 5px;
 }
 
-.worldbuilding.sheet.actor {
+.daggerheart.sheet.actor {
   min-width: 560px;
   min-height: 420px;
 }
 
-.worldbuilding.sheet.item {
+.daggerheart.sheet.item {
   min-width: 460px;
   min-height: 400px;
 }

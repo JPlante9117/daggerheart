@@ -35,30 +35,30 @@
         {{!-- Attributes and Skills Tab --}}
         <div style="float: left; width: 50%" class=" tab attributes" data-group="primary" data-tab="attributes">
             <header class="attributes-header flexrow">
-                <span class="attribute-label" style="flex-basis:75%">{{localize "SIMPLE.AttributeLabel"}}</span>
+                <span class="attribute-label" style="flex-basis:75%">{{localize "DAGGERHEART.AttributeLabel"}}</span>
                 <!-- <span class="attribute-label"></span> This is for the circle of attributes -->
-                <span class="attribute-value" style="flex-basis:20%">{{localize "SIMPLE.AttributeValue"}}</span>
+                <span class="attribute-value" style="flex-basis:20%">{{localize "DAGGERHEART.AttributeValue"}}</span>
             </header>
             {{!-- Render the attribute list partial. --}}
-            {{> "systems/worldbuilding/templates/parts/sheet-attributes.html" attributes=systemData.attributes
+            {{> "systems/daggerheart/templates/parts/sheet-attributes.hbs" attributes=systemData.attributes
             dtypes=dtypes}}
         </div>
 
-        <div style="float: left; width: 50%" class=" tab attributes" data-group="primary" data-tab="attributes">
+        <!-- <div style="float: left; width: 50%" class=" tab attributes" data-group="primary" data-tab="attributes">
             <header class="skills-header flexrow">
-                <span class="attribute-label">{{localize "SIMPLE.SkillLabel"}}</span>
-                <span class="attribute-value">{{localize "SIMPLE.SkillValue"}}</span>
+                <span class="attribute-label">{{localize "DAGGERHEART.SkillLabel"}}</span>
+                <span class="attribute-value">{{localize "DAGGERHEART.SkillValue"}}</span>
             </header>
 
             {{!-- Render the skills list partial. --}}
-            {{> "systems/worldbuilding/templates/parts/sheet-skills.html" skills=systemData.skills test=
+            {{> "systems/daggerheart/templates/parts/sheet-skills.hbs" skills=systemData.skills test=
             context.systemData.keysTESTE
             dtypes=dtypes}}
-        </div>
+        </div> -->
 
         {{!-- Biography Tab --}}
         <div class="tab description" data-group="primary" data-tab="description">
-            {{editor biographyHTML target="system.biography" button=true editable=editable engine="prosemirror"}}
+            {{editor biographyHbs target="system.biography" button=true editable=editable engine="prosemirror"}}
         </div>
 
         {{!-- Owned Items Tab --}}
@@ -106,23 +106,23 @@
                         {{/each}}
                     </div>
                     <div class="item-controls">
-                        <a class="item-control" title="{{ localize " SIMPLE.ItemEdit" }}" data-action="edit"><i
+                        <a class="item-control" title="{{ localize " DAGGERHEART.ItemEdit" }}" data-action="edit"><i
                                 class="fas fa-edit"></i></a>
-                        <a class="item-control" title="{{ localize " SIMPLE.ItemDelete" }}" data-action="delete"><i
+                        <a class="item-control" title="{{ localize " DAGGERHEART.ItemDelete" }}" data-action="delete"><i
                                 class="fas fa-trash"></i></a>
                     </div>
                 </li>
                 {{/each}}
             </ol>
             <p>
-                <a class="item-control" title="{{ localize " SIMPLE.ItemCreate" }}" data-action="create"><i
-                        class="fas fa-plus"></i> {{ localize "SIMPLE.ItemCreate" }}</a>
+                <a class="item-control" title="{{ localize " DAGGERHEART.ItemCreate" }}" data-action="create"><i
+                        class="fas fa-plus"></i> {{ localize "DAGGERHEART.ItemCreate" }}</a>
             </p>
         </div>
 
         {{!-- Biography Tab --}}
         <div class="tab description" data-group="primary" data-tab="description">
-            {{editor biographyHTML target="system.biography" button=true editable=editable engine="prosemirror"}}
+            {{editor biographyHbs target="system.biography" button=true editable=editable engine="prosemirror"}}
         </div>
     </section>
 </form>

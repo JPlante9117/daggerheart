@@ -33,19 +33,19 @@
         {{!-- Attributes Tab --}}
         <div class="tab attributes" data-group="primary" data-tab="attributes">
             <header class="attributes-header flexrow">
-                <span class="attribute-key">{{localize "SIMPLE.AttributeKey"}}</span>
-                <span class="attribute-value">{{localize "SIMPLE.AttributeValue"}}</span>
-                <span class="attribute-label">{{localize "SIMPLE.AttributeLabel"}}</span>
-                <span class="attribute-dtype">{{localize "SIMPLE.AttributeDtype"}}</span>
+                <span class="attribute-key">{{localize "DAGGERHEART.AttributeKey"}}</span>
+                <span class="attribute-value">{{localize "DAGGERHEART.AttributeValue"}}</span>
+                <span class="attribute-label">{{localize "DAGGERHEART.AttributeLabel"}}</span>
+                <span class="attribute-dtype">{{localize "DAGGERHEART.AttributeDtype"}}</span>
                 <a class="attribute-control" data-action="create" data-group="{{group}}"><i class="fas fa-plus"></i></a>
             </header>
 
             {{!-- Render the attribute list partial. --}}
-            {{> "systems/worldbuilding/templates/parts/sheet-attributes.html" attributes=systemData.ungroupedAttributes dtypes=dtypes}}
+            {{> "systems/daggerheart/templates/parts/sheet-attributes.hbs" attributes=systemData.ungroupedAttributes dtypes=dtypes}}
 
             {{!-- Render the grouped attributes partial and control. --}}
             <div class="groups">
-                {{> "systems/worldbuilding/templates/parts/sheet-groups.html" attributes=systemData.groupedAttributes groups=systemData.groups dtypes=dtypes}}
+                {{> "systems/daggerheart/templates/parts/sheet-groups.hbs" attributes=systemData.groupedAttributes groups=systemData.groups dtypes=dtypes}}
                 <div class="group-controls flexrow">
                     <input class="group-prefix" type="text" value=""/>
                     <a class="button group-control" data-action="create-group"><i class="fas fa-plus"></i>Add Attribute Group</a>

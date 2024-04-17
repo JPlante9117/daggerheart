@@ -4,12 +4,11 @@
         <div class="attribute flexrow" data-attribute="{{#if attr.group}}{{attr.group}}.{{/if}}{{key}}">
 
             <input type="hidden" class="attribute-key" type="text"
-                name="system.attributes.{{#if attr.group}}{{attr.group}}.{{/if}}{{key}}.key" value="{{key}}"
-                placeholder="{{localize " SIMPLE.AttributeKey"}}" />
+                name="system.attributes.{{#if attr.group}}{{attr.group}}.{{/if}}{{key}}.key" value="{{key}}"/>
             {{!-- Handle other input types. --}}
             <input class="attribute-label" type="text"
                 name="system.attributes.{{#if attr.group}}{{attr.group}}.{{/if}}{{key}}.label" value="{{attr.label}}"
-                placeholder="{{localize " SIMPLE.AttributeLabel"}}" disabled="disabled" style="flex-basis:60%;" />
+                disabled="disabled" style="flex-basis:60%;" />
             <!-- 
             <div>
                 <a class="attrCircle change-attribute" data-attribute="{{key}}"> </a>
@@ -17,12 +16,12 @@
 
             <input class="attribute-value" type="number"
                 name="system.attributes.{{#if attr.group}}{{attr.group}}.{{/if}}{{key}}.value" value="{{attr.value}}"
-                data-dtype="{{attr.dtype}}" placeholder="{{localize " SIMPLE.AttributeValue"}}" style="flex-basis:2%" />
+                data-dtype="{{attr.dtype}}" style="flex-basis:2%" />
 
 
             <input class="attribute-value" type="number"
                 name="system.attributes.{{#if attr.group}}{{attr.group}}.{{/if}}{{key}}.max" value="{{attr.max}}"
-                data-dtype="{{attr.dtype}}" placeholder="{{localize " SIMPLE.AttributeValue"}}" style="flex-basis:2%" />
+                data-dtype="{{attr.dtype}}" style="flex-basis:2%" />
 
         </div>
         {{/each}}

@@ -4,15 +4,32 @@ import { EntitySheetHelper } from "./helper.js";
  * Extend the base Actor document to support attributes and groups with a custom template creation dialog.
  * @extends {Actor}
  */
-export class SimpleActor extends Actor {
+export class DaggerheartActor extends Actor {
 
   /** @inheritdoc */
   prepareDerivedData() {
     super.prepareDerivedData();
-    this.system.groups = this.system.groups || {};
-    this.system.attributes = this.system.attributes || {};
-    EntitySheetHelper.clampResourceValues(this.system.attributes);
+    const actorData = this,
+        systemData = actorData.system;
+
+    this._prepareCharacterData(actorData);
+    this._prepareAdversaryData(actorData);
+    EntitySheetHelper.clampResourceValues(systemData.attributes);
   }
+
+  _prepareAdversaryData(data) {
+
+  };
+
+  _prepareCharacterData(data) {
+    if (data.tpye !== 'character') return;
+
+    const systemData = data.system;
+
+    for (let [key, attributes] of Object.entries(systemData.attributes)) {
+      attributes.mod = attributes.value
+    }
+  };
 
   /* -------------------------------------------- */
 
@@ -28,7 +45,7 @@ export class SimpleActor extends Actor {
    * @type {boolean}
    */
   get isTemplate() {
-    return !!this.getFlag("worldbuilding", "isTemplate");
+    return !!this.getFlag("daggerheart", "isTemplate");
   }
 
   /* -------------------------------------------- */
@@ -37,32 +54,32 @@ export class SimpleActor extends Actor {
 
   /** @inheritdoc */
   getRollData() {
+    const data = super.getRollData();
+    
+    this._getCharacterRollData(data);
+    this._getAdversaryRollData(data);
 
-    // Copy the actor's system data
-    const data = this.toObject(false);
-    const shorthand = game.settings.get("worldbuilding", "macroShorthand");
-    const formulaAttributes = [];
-    const itemAttributes = [];
-
-    // Handle formula attributes when the short syntax is disabled.
-    this._applyShorthand(data, formulaAttributes, shorthand);
-
-    // Map all item data using their slugified names
-    this._applyItems(data, itemAttributes, shorthand);
-
-    // Evaluate formula replacements on items.
-    this._applyItemsFormulaReplacements(data, itemAttributes, shorthand);
-
-    // Evaluate formula attributes after all other attributes have been handled, including items.
-    this._applyFormulaReplacements(data, formulaAttributes, shorthand);
-
-    // Remove the attributes if necessary.
-    if ( !!shorthand ) {
-      delete data.attributes;
-      delete data.attr;
-      delete data.groups;
-    }
     return data;
+  }
+
+  _getAdversaryRollData(data) {
+    if (this.type !== "adversary") return;
+
+    // DO WHEN ADVERSARY TEMPLATE IS DONE
+  }
+
+  _getCharacterRollData(data) {
+    if (this.type !== "character") return;
+
+    if (data.attributes) {
+      for (let [k, v] of Object.entries(data.attributes)) {
+        data[k] = foundry.utils.deepClone(v);
+      }
+    }
+
+    if (data.attributes.level) {
+      data.lvl = data.attributes.level.value ?? 0
+    }
   }
 
   /* -------------------------------------------- */
@@ -111,7 +128,7 @@ export class SimpleActor extends Actor {
     // Map all items data using their slugified names
     data.items = this.items.reduce((obj, item) => {
       const key = item.name.slugify({strict: true});
-      const itemData = item.toObject(false);
+      const itemData = item.object(false);
 
       // Add items to shorthand and note which ones are formula attributes.
       for ( let [k, v] of Object.entries(itemData.system.attributes) ) {

@@ -2,7 +2,7 @@
  * Extend the base TokenDocument to support resource type attributes.
  * @extends {TokenDocument}
  */
-export class SimpleTokenDocument extends TokenDocument {
+export class DaggerheartTokenDocument extends TokenDocument {
 
   /** @inheritdoc */
   getBarAttribute(barName, {alternative}={}) {
@@ -24,7 +24,7 @@ export class SimpleTokenDocument extends TokenDocument {
       foundry.utils.mergeObject(data, model);
     }
     for ( const actor of game.actors ) {
-      if ( actor.isTemplate ) foundry.utils.mergeObject(data, actor.toObject());
+      if ( actor.isTemplate ) foundry.utils.mergeObject(data, actor.object());
     }
     return super.getTrackedAttributes(data);
   }
@@ -38,7 +38,7 @@ export class SimpleTokenDocument extends TokenDocument {
  * Extend the base Token class to implement additional system-specific logic.
  * @extends {Token}
  */
-export class SimpleToken extends Token {
+export class DaggerheartToken extends Token {
   _drawBar(number, bar, data) {
     if ( "min" in data ) {
       // Copy the data to avoid mutating what the caller gave us.

@@ -5,13 +5,13 @@ import { ATTRIBUTE_TYPES } from "./constants.js";
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class SimpleActorSheet extends ActorSheet {
+export class DaggerheartActorSheet extends ActorSheet {
 
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["worldbuilding", "sheet", "actor"],
-      template: "systems/worldbuilding/templates/actor-sheet.html",
+      classes: ["daggerheart", "sheet", "actor"],
+      template: "systems/daggerheart/templates/actor-sheet.hbs",
       width: 600,
       height: 600,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }],
@@ -20,24 +20,50 @@ export class SimpleActorSheet extends ActorSheet {
     });
   }
 
+  /**@override */
+  get template() {
+    return `systems/daggerheart/templates/actor/actor-${this.actor.type}-sheet.hbs`;
+  }
+
   /* -------------------------------------------- */
 
   /** @inheritdoc */
   async getData(options) {
-    const context = await super.getData(options);
-    EntitySheetHelper.getAttributeData(context.data);
-    context.shorthand = !!game.settings.get("worldbuilding", "macroShorthand");
-    context.systemData = context.data.system;
-    const skillArray = Object.keys(context.systemData.skills);
-    skillArray.forEach(skill => { context.systemData.skills[skill].attrAbbreviation = context.systemData.attributes[context.systemData.skills[skill].basedAttribute].abbreviation });
-    const keysTESTE = Object.keys(context.systemData.attributes);
-    context.systemData.keysTESTE = keysTESTE
-    context.dtypes = ATTRIBUTE_TYPES;
-    context.biographyHTML = await TextEditor.enrichHTML(context.systemData.biography, {
-      secrets: this.document.isOwner,
-      async: true
-    });
-    return context;
+      // Retrieve the data structure from the base sheet. You can inspect or log
+      // the context variable to see the structure, but some key properties for
+      // sheets are the actor object, the data object, whether or not it's
+      // editable, the items array, and the effects array.
+      const context = super.getData();
+
+      // Use a safe clone of the actor data for further operations.
+      const actorData = context.data;
+
+      // Add the actor's data to context.data for easier access, as well as flags.
+      context.system = actorData.system;
+      context.flags = actorData.flags;
+
+      // Prepare character data and items.
+      if (actorData.type == 'character') {
+        this._prepareItems(context);
+        this._prepareCharacterData(context);
+      }
+
+      // Prepare NPC data and items.
+      if (actorData.type == 'npc') {
+        this._prepareItems(context);
+      }
+
+      // Add roll data for TinyMCE editors.
+      context.rollData = context.actor.getRollData();
+
+      // Prepare active effects
+      // context.effects = prepareActiveEffectCategories(
+      //   // A generator that returns all effects stored on the actor
+      //   // as well as any items
+      //   this.actor.allApplicableEffects()
+      // );
+
+      return context;
   }
 
   /* -------------------------------------------- */
@@ -97,7 +123,7 @@ export class SimpleActorSheet extends ActorSheet {
     switch (button.dataset.action) {
       case "create":
         const cls = getDocumentClass("Item");
-        return cls.create({ name: game.i18n.localize("SIMPLE.ItemNew"), type: "item" }, { parent: this.actor });
+        return cls.create({ name: game.i18n.localize("DAGGERHEART.ItemNew"), type: "item" }, { parent: this.actor });
       case "edit":
         return item.sheet.render(true);
       case "delete":
