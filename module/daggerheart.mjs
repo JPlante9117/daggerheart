@@ -16,8 +16,8 @@ Hooks.once('init', function () {
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
   game.daggerheart = {
-    DAggerheartActor,
-    DAggerheartItem,
+    DaggerheartActor,
+    DaggerheartItem,
     rollItemMacro,
   };
 
@@ -34,8 +34,8 @@ Hooks.once('init', function () {
   };
 
   // Define custom Document classes
-  CONFIG.Actor.documentClass = DAggerheartActor;
-  CONFIG.Item.documentClass = DAggerheartItem;
+  CONFIG.Actor.documentClass = DaggerheartActor;
+  CONFIG.Item.documentClass = DaggerheartItem;
 
   // Active Effects are never copied to the Actor,
   // but will still apply to the Actor from within the Item
@@ -44,12 +44,12 @@ Hooks.once('init', function () {
 
   // Register sheet application classes
   Actors.unregisterSheet('core', ActorSheet);
-  Actors.registerSheet('daggerheart', DAggerheartActorSheet, {
+  Actors.registerSheet('daggerheart', DaggerheartActorSheet, {
     makeDefault: true,
     label: 'DAGGERHEART.SheetLabels.Actor',
   });
   Items.unregisterSheet('core', ItemSheet);
-  Items.registerSheet('daggerheart', DAggerheartItemSheet, {
+  Items.registerSheet('daggerheart', DaggerheartItemSheet, {
     makeDefault: true,
     label: 'DAGGERHEART.SheetLabels.Item',
   });
