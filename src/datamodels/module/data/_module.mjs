@@ -1,10 +1,10 @@
 // Export Actors
-export {default as BoilerplateActorBase} from "./actor-base.mjs";
-export {default as BoilerplateCharacter} from "./character.mjs";
-export {default as BoilerplateNPC} from "./npc.mjs";
+export {default as DaggerheartActorBase} from "./actor-base.mjs";
+export {default as DaggerheartCharacter} from "./character.mjs";
+export {default as DaggerheartNPC} from "./npc.mjs";
 
 // Export Items
-export {default as BoilerplateItemBase} from "./item-base.mjs";
-export {default as BoilerplateItem} from "./item.mjs";
-export {default as BoilerplateFeature} from "./feature.mjs";
-export {default as BoilerplateSpell} from "./spell.mjs";
+export {default as DaggerheartItemBase} from "./item-base.mjs";
+export {default as DaggerheartItem} from "./item.mjs";
+export {default as DaggerheartFeature} from "./feature.mjs";
+export {default as DaggerheartSpell} from "./spell.mjs";

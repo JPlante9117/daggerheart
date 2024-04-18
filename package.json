@@ -1,11 +1,11 @@
 {
-  "name": "boilerplate",
+  "name": "daggerheart",
   "version": "2.0.0",
-  "description": "CSS compiler for the Boilerplate system",
+  "description": "CSS compiler for the Daggerheart system",
   "scripts": {
-    "build": "sass src/scss/boilerplate.scss css/boilerplate.css --style=expanded --no-source-map",
-    "watch": "sass src/scss/boilerplate.scss css/boilerplate.css --style=expanded --source-map --watch",
-    "generate": "node src/generate-boilerplate-system.mjs"
+    "build": "sass src/scss/daggerheart.scss css/daggerheart.css --style=expanded --no-source-map",
+    "watch": "sass src/scss/daggerheart.scss css/daggerheart.css --style=expanded --source-map --watch",
+    "generate": "node src/generate-daggerheart-system.mjs"
   },
   "browserslist": [
     "last 3 versions"

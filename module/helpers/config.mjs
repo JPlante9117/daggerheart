@@ -1,23 +1,23 @@
-export const BOILERPLATE = {};
+export const DAGGERHEART = {};
 
 /**
  * The set of Ability Scores used within the system.
  * @type {Object}
  */
-BOILERPLATE.abilities = {
-  str: 'BOILERPLATE.Ability.Str.long',
-  dex: 'BOILERPLATE.Ability.Dex.long',
-  con: 'BOILERPLATE.Ability.Con.long',
-  int: 'BOILERPLATE.Ability.Int.long',
-  wis: 'BOILERPLATE.Ability.Wis.long',
-  cha: 'BOILERPLATE.Ability.Cha.long',
+DAGGERHEART.abilities = {
+  str: 'DAGGERHEART.Ability.Str.long',
+  dex: 'DAGGERHEART.Ability.Dex.long',
+  con: 'DAGGERHEART.Ability.Con.long',
+  int: 'DAGGERHEART.Ability.Int.long',
+  wis: 'DAGGERHEART.Ability.Wis.long',
+  cha: 'DAGGERHEART.Ability.Cha.long',
 };
 
-BOILERPLATE.abilityAbbreviations = {
-  str: 'BOILERPLATE.Ability.Str.abbr',
-  dex: 'BOILERPLATE.Ability.Dex.abbr',
-  con: 'BOILERPLATE.Ability.Con.abbr',
-  int: 'BOILERPLATE.Ability.Int.abbr',
-  wis: 'BOILERPLATE.Ability.Wis.abbr',
-  cha: 'BOILERPLATE.Ability.Cha.abbr',
+DAGGERHEART.abilityAbbreviations = {
+  str: 'DAGGERHEART.Ability.Str.abbr',
+  dex: 'DAGGERHEART.Ability.Dex.abbr',
+  con: 'DAGGERHEART.Ability.Con.abbr',
+  int: 'DAGGERHEART.Ability.Int.abbr',
+  wis: 'DAGGERHEART.Ability.Wis.abbr',
+  cha: 'DAGGERHEART.Ability.Cha.abbr',
 };

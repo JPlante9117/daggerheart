@@ -1,3 +1,3 @@
-import BoilerplateItemBase from "./item-base.mjs";
+import DaggerheartItemBase from "./item-base.mjs";
 
-export default class BoilerplateFeature extends BoilerplateItemBase {}
+export default class DaggerheartFeature extends DaggerheartItemBase {}

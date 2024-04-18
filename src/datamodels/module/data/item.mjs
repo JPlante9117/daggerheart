@@ -1,6 +1,6 @@
-import BoilerplateItemBase from "./item-base.mjs";
+import DaggerheartItemBase from "./item-base.mjs";
 
-export default class BoilerplateItem extends BoilerplateItemBase {
+export default class DaggerheartItem extends DaggerheartItemBase {
 
   static defineSchema() {
     const fields = foundry.data.fields;

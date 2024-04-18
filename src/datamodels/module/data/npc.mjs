@@ -1,6 +1,6 @@
-import BoilerplateActorBase from "./actor-base.mjs";
+import DaggerheartActorBase from "./actor-base.mjs";
 
-export default class BoilerplateNPC extends BoilerplateActorBase {
+export default class DaggerheartNPC extends DaggerheartActorBase {
 
   static defineSchema() {
     const fields = foundry.data.fields;
