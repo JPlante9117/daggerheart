@@ -1,117 +1,73 @@
 {
   "Actor": {
-    "types": [
-      "character",
-      "adversary"
-    ],
-    "htmlFields": [
-      "biography"
-    ],
+    "types": ["character", "npc"],
+    "templates": {
+      "base": {
+        "health": {
+          "value": 10,
+          "min": 0,
+          "max": 10
+        },
+        "power": {
+          "value": 5,
+          "min": 0,
+          "max": 5
+        },
+        "biography": ""
+      }
+    },
     "character": {
-      "biography": "",
-      "health": {
-        "value": 0,
-        "min": 0,
-        "max": 12,
-        "pmax": 6
-      },
-      "stress": {
-        "value": 0,
-        "min": 0,
-        "max": 12,
-        "pmax": 6
-      },
-      "armor_slots": {
-        "value": 0,
-        "min": 0,
-        "max": 12,
-        "pmax": 6
-      },
+      "templates": ["base"],
       "attributes": {
-        "agility": {
-          "value": 0,
-          "label": "Agility",
-          "max": 5,
-          "abbreviation": "AGI"
-        },
-        "strength": {
-          "value": 0,
-          "label": "Strength",
-          "max": 5,
-          "abbreviation": "STR"
-        },
-        "finesse": {
-          "value": 0,
-          "label": "Finesse",
-          "max": 5,
-          "abbreviation": "FIN"
-        },
-        "instinct": {
-          "value": 0,
-          "label": "Instinct",
-          "max": 5,
-          "abbreviation": "INS"
-        },
-        "presence": {
-          "value": 0,
-          "label": "Presence",
-          "max": 5,
-          "abbreviation": "PRE"
-        },
-        "knowledge": {
-          "value": 0,
-          "label": "Knowledge",
-          "max": 5,
-          "abbreviation": "KNO"
-        },
-        "evasion": {
-          "value": 0,
-          "label": "Evasion",
-          "max": 30,
-          "abbreviation": "EVA"
-        },
-        "armor": {
-          "value": 0,
-          "label": "Armor",
-          "max": 30,
-          "abbreviation": "ARM"
+        "level": {
+          "value": 1
         }
       },
-      "thresholds": {
-        "minor": {
-          "value": 1,
-          "label": "Minor Damage",
-          "abbreviation": "MINHP"
+      "abilities": {
+        "str": {
+          "value": 10
         },
-        "major": {
-          "value": 0,
-          "label": "Major Damage",
-          "abbreviation": "MAJHP"
+        "dex": {
+          "value": 10
         },
-        "severe": {
-          "value": 0,
-          "label": "Severe Damage",
-          "abbreviation": "SEVHP"
+        "con": {
+          "value": 10
+        },
+        "int": {
+          "value": 10
+        },
+        "wis": {
+          "value": 10
+        },
+        "cha": {
+          "value": 10
         }
       }
     },
-    "adversary": {
-
+    "npc": {
+      "templates": ["base"],
+      "cr": 0
     }
   },
   "Item": {
-    "types": [
-      "item"
-    ],
-    "htmlFields": [
-      "description"
-    ],
+    "types": ["item", "feature", "spell"],
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    },
     "item": {
-      "description": "",
+      "templates": ["base"],
       "quantity": 1,
       "weight": 0,
-      "attributes": {},
-      "groups": {}
+      "formula": "d20 + @str.mod + ceil(@lvl / 2)"
+    },
+    "feature": {
+      "templates": ["base"]
+    },
+    "spell": {
+      "templates": ["base"],
+      "spellLevel": 1
     }
   }
 }
