@@ -26,15 +26,6 @@ Hooks.once('init', function () {
   // Add custom constants for configuration.
   CONFIG.DAGGERHEART = DAGGERHEART;
 
-  /**
-   * Set an initiative formula for the system
-   * @type {String}
-   */
-  CONFIG.Combat.initiative = {
-    formula: '1d20 + @abilities.dex.mod',
-    decimals: 2,
-  };
-
   // Define custom Document and DataModel classes
   CONFIG.Actor.documentClass = DaggerheartActor;
 

@@ -4,7 +4,8 @@
   <header class="sheet-header">
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
     <div class="header-fields">
-      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/><input name="pronouns" type="text" value="{{actor.pronouns}}"/></h1>
+      <input name="heritage" type="text" value="{{actor.heritage}}"/><input name="subclass" type="text" value="{{actor.subclass}}"/>
       {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
       use both the "grid" and "grid-Ncol" class where "N" can be any number
       from 1 to 12 and will create that number of columns.  --}}
@@ -16,18 +17,21 @@
         <div class="resource flex-group-center">
           <label for="system.health.value" class="resource-label">Health</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.health.value" value="{{system.health.value}}" data-dtype="Number"/>
-          <span> / </span>
-          <input type="text" name="system.health.max" value="{{system.health.max}}" data-dtype="Number"/>
+            {{> "systems/daggerheart/templates/actor/parts/actor-checks.hbs" attr=system.health}}
           </div>
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.power.value" class="resource-label">Power</label>
+          <label for="system.stress.value" class="resource-label">Stress</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.power.value" value="{{system.power.value}}" data-dtype="Number"/>
-          <span> / </span>
-          <input type="text" name="system.power.max" value="{{system.power.max}}" data-dtype="Number"/>
+            {{> "systems/daggerheart/templates/actor/parts/actor-checks.hbs" attr=system.stress}}
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="system.stress.value" class="resource-label">Armor Slots</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            {{> "systems/daggerheart/templates/actor/parts/actor-checks.hbs" attr=system.armor_slots}}
           </div>
         </div>
 
@@ -66,9 +70,9 @@
           <div class="abilities flexcol">
             {{#each system.abilities as |ability key|}}
             <div class="ability flexrow flex-group-center">
-              <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="d20+@abilities.{{key}}.mod" data-label="{{ability.label}}">{{ability.label}}</label>
+              <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="2d12+@abilities.{{key}}.mod" data-label="{{ability.label}}">{{ability.label}}</label>
               <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
-              <span class="ability-mod rollable" data-roll="d20+@abilities.{{key}}.mod" data-label="{{ability.label}}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
+              <span class="ability-mod rollable" data-roll="2d12+@abilities.{{key}}.mod" data-label="{{ability.label}}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
             </div>
             {{/each}}
           </div>
@@ -106,6 +110,4 @@
 
   </section>
 </form>
-
-{{log system}}
 

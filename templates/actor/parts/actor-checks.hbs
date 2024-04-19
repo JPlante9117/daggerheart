@@ -1,0 +1,9 @@
+{{#if attr}}
+    {{#times attr.max}}
+        {{#when @index 'gteq' ../attr.pmax}}
+            <input name="hp-{{@index}}" type="checkbox" disabled="true" />
+        {{else}}
+            <input name="hp-{{@index}}" type="checkbox" />
+        {{/when}}
+    {{/times}}
+{{/if}}

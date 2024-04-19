@@ -5,19 +5,19 @@ export const DAGGERHEART = {};
  * @type {Object}
  */
 DAGGERHEART.abilities = {
+  agi: 'DAGGERHEART.Ability.Agi.long',
   str: 'DAGGERHEART.Ability.Str.long',
-  dex: 'DAGGERHEART.Ability.Dex.long',
-  con: 'DAGGERHEART.Ability.Con.long',
-  int: 'DAGGERHEART.Ability.Int.long',
-  wis: 'DAGGERHEART.Ability.Wis.long',
-  cha: 'DAGGERHEART.Ability.Cha.long',
+  fin: 'DAGGERHEART.Ability.Fin.long',
+  ins: 'DAGGERHEART.Ability.Ins.long',
+  pre: 'DAGGERHEART.Ability.Pre.long',
+  kno: 'DAGGERHEART.Ability.Kno.long',
 };
 
 DAGGERHEART.abilityAbbreviations = {
+  agi: 'DAGGERHEART.Ability.Agi.abbr',
   str: 'DAGGERHEART.Ability.Str.abbr',
-  dex: 'DAGGERHEART.Ability.Dex.abbr',
-  con: 'DAGGERHEART.Ability.Con.abbr',
-  int: 'DAGGERHEART.Ability.Int.abbr',
-  wis: 'DAGGERHEART.Ability.Wis.abbr',
-  cha: 'DAGGERHEART.Ability.Cha.abbr',
+  fin: 'DAGGERHEART.Ability.Fin.abbr',
+  ins: 'DAGGERHEART.Ability.Ins.abbr',
+  pre: 'DAGGERHEART.Ability.Pre.abbr',
+  kno: 'DAGGERHEART.Ability.Kno.abbr',
 };

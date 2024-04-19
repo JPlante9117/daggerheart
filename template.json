@@ -1,52 +1,97 @@
 {
   "Actor": {
-    "types": ["character", "npc"],
+    "types": ["character", "npc", "adversary"],
     "templates": {
       "base": {
         "health": {
-          "value": 10,
+          "value": 6,
           "min": 0,
-          "max": 10
+          "max": 12,
+          "pmax": 6
         },
-        "power": {
-          "value": 5,
+        "stress": {
+          "value": 6,
           "min": 0,
-          "max": 5
+          "max": 12,
+          "pmax": 6
         },
         "biography": ""
       }
     },
     "character": {
       "templates": ["base"],
+      "pronouns": "",
+      "heritage": "",
+      "class": "",
+      "subclass": "",
+      "armor_slots": {
+        "value": 6,
+        "min": 0,
+        "max": 12,
+        "pmax": 6
+      },
+      "hope": {
+        "value": 0,
+        "min": 0,
+        "max": 6
+      },
+      "experiences": [
+        {
+          "description": "Default Experience",
+          "bonus": 1
+        }
+      ],
       "attributes": {
         "level": {
           "value": 1
+        },
+        "armor": {
+          "value": 1
+        },
+        "evasion": {
+          "value": 9
+        },
+        "thresholds": {
+          "minor": 1,
+          "major": 6,
+          "severe": 12
         }
       },
       "abilities": {
+        "agi": {
+          "value": 0
+        },
         "str": {
-          "value": 10
+          "value": 0
         },
-        "dex": {
-          "value": 10
+        "fin": {
+          "value": 0
         },
-        "con": {
-          "value": 10
+        "ins": {
+          "value": 0
         },
-        "int": {
-          "value": 10
+        "pre": {
+          "value": 0
         },
-        "wis": {
-          "value": 10
-        },
-        "cha": {
-          "value": 10
+        "kno": {
+          "value": 0
         }
+      },
+      "gold": {
+        "coins": 0,
+        "handfuls": 0,
+        "bags": 0,
+        "chests": 0
       }
     },
     "npc": {
       "templates": ["base"],
       "cr": 0
+    },
+    "adversary": {
+      "templates": ["base"],
+      "tier": 0,
+      "type": "minion"
     }
   },
   "Item": {

@@ -24,15 +24,6 @@ Hooks.once('init', function () {
   // Add custom constants for configuration.
   CONFIG.DAGGERHEART = DAGGERHEART;
 
-  /**
-   * Set an initiative formula for the system
-   * @type {String}
-   */
-  CONFIG.Combat.initiative = {
-    formula: '1d20 + @abilities.dex.mod',
-    decimals: 2,
-  };
-
   // Define custom Document classes
   CONFIG.Actor.documentClass = DaggerheartActor;
   CONFIG.Item.documentClass = DaggerheartItem;
@@ -65,6 +56,48 @@ Hooks.once('init', function () {
 // If you need to add Handlebars helpers, here is a useful example:
 Handlebars.registerHelper('toLowerCase', function (str) {
   return str.toLowerCase();
+});
+
+Handlebars.registerHelper('when', (operand_1, operator, operand_2, options) => {
+  var operators = {
+    'eq': (l, r) => l == r,
+    'noteq': (l, r) => l != r,
+    'gt': (l, r) => l > r,
+    'gteq': (l, r) => l >= r,
+    'lt': (l, r) => l < r,
+    'lteq': (l, r) => l <= r,
+    'or': (l, r) => l || r,
+    'and': (l, r) => l && r,
+    '%': (l, r) => l % r === 0
+  },
+  result = operators[operator](operand_1, operand_2);
+
+  if (result) {
+    return options.fn(this);
+  } else {
+    return options.inverse(this);
+  }
+});
+
+Handlebars.registerHelper('times', (n, options) => {
+    let acc = '',
+      data;
+
+    if (options.data) {
+      data = Handlebars.createFrame(options.data);
+    }
+
+    for (let i = 0; i < n; i++) {
+      if (data) {
+        data.index = i;
+      }
+
+      acc += options.fn(i, {
+        data
+      });
+    }
+
+    return acc;
 });
 
 /* -------------------------------------------- */
