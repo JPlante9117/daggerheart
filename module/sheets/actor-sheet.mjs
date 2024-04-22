@@ -18,7 +18,7 @@ export class DaggerheartActorSheet extends ActorSheet {
         {
           navSelector: '.sheet-tabs',
           contentSelector: '.sheet-body',
-          initial: 'features',
+          initial: 'attributes',
         },
       ],
     });

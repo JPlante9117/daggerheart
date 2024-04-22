@@ -204,10 +204,10 @@
 }
 
 /* Styles limited to boilerplate sheets */
-.boilerplate .item-form {
+.daggerheart .item-form {
   font-family: "Roboto", sans-serif;
 }
-.boilerplate .sheet-header {
+.daggerheart .sheet-header {
   flex: 0 auto;
   overflow: hidden;
   display: flex;
@@ -216,43 +216,120 @@
   justify-content: flex-start;
   margin-bottom: 10px;
 }
-.boilerplate .sheet-header .profile-img {
+.daggerheart .sheet-header .profile-img {
   flex: 0 0 100px;
   height: 100px;
   margin-right: 10px;
 }
-.boilerplate .sheet-header .header-fields {
+.daggerheart .sheet-header .header-fields {
+  display: flex;
   flex: 1;
+  text-transform: uppercase;
+  gap: 0.5rem;
 }
-.boilerplate .sheet-header h1.charname {
-  height: 50px;
-  padding: 0px;
-  margin: 5px 0;
-  border-bottom: 0;
+.daggerheart .sheet-header .header-fields .ClassBlock {
+  flex: 3;
+  background: linear-gradient(112deg, #171717 86%, transparent 20px);
+  color: white;
+  padding: 1rem;
+  font-size: 1.25rem;
+  height: 90px;
 }
-.boilerplate .sheet-header h1.charname input {
+.daggerheart .sheet-header .header-fields .ClassBlock__Title {
+  font-weight: 800;
+}
+.daggerheart .sheet-header .header-fields .ClassBlock__Domains {
+  font-weight: 200;
+}
+.daggerheart .sheet-header .header-fields .FieldsBlock {
+  display: flex;
+  flex: 5;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.daggerheart .sheet-header .header-fields .FieldsBlock .FieldsBlock__Row {
+  display: flex;
+  gap: 0.25rem;
   width: 100%;
-  height: 100%;
-  margin: 0;
 }
-.boilerplate .sheet-tabs {
+.daggerheart .sheet-header .header-fields .FieldsBlock .FieldsBlock__Row:last-child {
+  margin-left: -7%;
+}
+.daggerheart .sheet-header .header-fields .FieldsBlock .FieldsBlock__Row .input__Wrapper {
+  flex: 2;
+  position: relative;
+}
+.daggerheart .sheet-header .header-fields .FieldsBlock .FieldsBlock__Row .input__Wrapper:nth-child(1), .daggerheart .sheet-header .header-fields .FieldsBlock .FieldsBlock__Row .input__Wrapper:nth-child(3) {
+  flex: 3;
+}
+.daggerheart .sheet-header .header-fields .FieldsBlock .FieldsBlock__Row .input__Wrapper label {
+  font-size: 0.625rem;
+  left: 0.25rem;
+  position: absolute;
+  top: 0.25rem;
+  opacity: 80%;
+}
+.daggerheart .sheet-header .header-fields .FieldsBlock .FieldsBlock__Row .input__Wrapper input {
+  height: 40px;
+  padding-top: 15px;
+}
+.daggerheart .sheet-header .header-fields .LevelBlock {
+  position: relative;
+  width: 90px;
+}
+.daggerheart .sheet-header .header-fields .LevelBlock .Shield__Wrapper {
+  position: relative;
+}
+.daggerheart .sheet-header .header-fields .LevelBlock .Shield__Wrapper img.shield_icon {
+  height: unset;
+  max-height: 90px;
+}
+.daggerheart .sheet-header .header-fields .LevelBlock label {
+  position: absolute;
+  bottom: 1rem;
+  background: #171717;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  width: 100%;
+  left: 50%;
+  font-size: 0.625rem;
+  max-width: 90px;
+  transform: translateX(-50%);
+}
+.daggerheart .sheet-header .header-fields .LevelBlock input {
+  all: unset;
+  border: none;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+.daggerheart .sheet-tabs {
   flex: 0;
 }
-.boilerplate .sheet-body,
-.boilerplate .sheet-body .tab,
-.boilerplate .sheet-body .tab .editor {
+.daggerheart .sheet-body,
+.daggerheart .sheet-body .tab,
+.daggerheart .sheet-body .tab .editor {
   height: 100%;
 }
-.boilerplate .tox .tox-editor-container {
+.daggerheart .tox .tox-editor-container {
   background: #fff;
 }
-.boilerplate .tox .tox-edit-area {
+.daggerheart .tox .tox-edit-area {
   padding: 0 8px;
 }
-.boilerplate .resource-label {
+.daggerheart img.shield_icon {
+  all: unset;
+  border: none;
+  width: 100%;
+}
+.daggerheart .resource-label {
   font-weight: bold;
 }
-.boilerplate .items-header {
+.daggerheart .items-header {
   height: 28px;
   margin: 2px 0;
   padding: 0;
@@ -261,17 +338,17 @@
   border: 2px groove #eeede0;
   font-weight: bold;
 }
-.boilerplate .items-header > * {
+.daggerheart .items-header > * {
   font-size: 14px;
   text-align: center;
 }
-.boilerplate .items-header .item-name {
+.daggerheart .items-header .item-name {
   font-weight: bold;
   padding-left: 5px;
   text-align: left;
   display: flex;
 }
-.boilerplate .items-list {
+.daggerheart .items-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -279,12 +356,12 @@
   scrollbar-width: thin;
   color: #444;
 }
-.boilerplate .items-list .item-list {
+.daggerheart .items-list .item-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.boilerplate .items-list .item-name {
+.daggerheart .items-list .item-name {
   flex: 2;
   margin: 0;
   overflow: hidden;
@@ -293,46 +370,46 @@
   align-items: center;
   display: flex;
 }
-.boilerplate .items-list .item-name h3, .boilerplate .items-list .item-name h4 {
+.daggerheart .items-list .item-name h3, .daggerheart .items-list .item-name h4 {
   margin: 0;
   white-space: nowrap;
   overflow-x: hidden;
 }
-.boilerplate .items-list .item-controls {
+.daggerheart .items-list .item-controls {
   display: flex;
   flex: 0 0 100px;
   justify-content: flex-end;
 }
-.boilerplate .items-list .item-controls a {
+.daggerheart .items-list .item-controls a {
   font-size: 12px;
   text-align: center;
   margin: 0 6px;
 }
-.boilerplate .items-list .item {
+.daggerheart .items-list .item {
   align-items: center;
   padding: 0 2px;
   border-bottom: 1px solid #c9c7b8;
 }
-.boilerplate .items-list .item:last-child {
+.daggerheart .items-list .item:last-child {
   border-bottom: none;
 }
-.boilerplate .items-list .item .item-name {
+.daggerheart .items-list .item .item-name {
   color: #191813;
 }
-.boilerplate .items-list .item .item-name .item-image {
+.daggerheart .items-list .item .item-name .item-image {
   flex: 0 0 30px;
   height: 30px;
   background-size: 30px;
   border: none;
   margin-right: 5px;
 }
-.boilerplate .items-list .item-prop {
+.daggerheart .items-list .item-prop {
   text-align: center;
   border-left: 1px solid #c9c7b8;
   border-right: 1px solid #c9c7b8;
   font-size: 12px;
 }
-.boilerplate .items-list .items-header {
+.daggerheart .items-list .items-header {
   height: 28px;
   margin: 2px 0;
   padding: 0;
@@ -341,26 +418,26 @@
   border: 2px groove #eeede0;
   font-weight: bold;
 }
-.boilerplate .items-list .items-header > * {
+.daggerheart .items-list .items-header > * {
   font-size: 12px;
   text-align: center;
 }
-.boilerplate .items-list .items-header .item-name {
+.daggerheart .items-list .items-header .item-name {
   padding-left: 5px;
   text-align: left;
 }
-.boilerplate .item-formula {
+.daggerheart .item-formula {
   flex: 0 0 200px;
   padding: 0 8px;
 }
-.boilerplate .effects .item .effect-source,
-.boilerplate .effects .item .effect-duration,
-.boilerplate .effects .item .effect-controls {
+.daggerheart .effects .item .effect-source,
+.daggerheart .effects .item .effect-duration,
+.daggerheart .effects .item .effect-controls {
   text-align: center;
   border-left: 1px solid #c9c7b8;
   border-right: 1px solid #c9c7b8;
   font-size: 12px;
 }
-.boilerplate .effects .item .effect-controls {
+.daggerheart .effects .item .effect-controls {
   border: none;
 }

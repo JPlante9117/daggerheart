@@ -18,18 +18,104 @@
   }
 
   .header-fields {
+    display: flex;
     flex: 1;
-  }
+    text-transform: uppercase;
+    gap: 0.5rem;
 
-  h1.charname {
-    height: 50px;
-    padding: 0px;
-    margin: 5px 0;
-    border-bottom: 0;
-    input {
-      width: 100%;
-      height: 100%;
-      margin: 0;
+    .ClassBlock {
+      flex: 3;
+      background: linear-gradient(112deg, #171717 86%, transparent 20px);
+      color: white;
+      padding: 1rem;
+      font-size: 1.25rem;
+      height: 90px;
+
+      &__Title {
+        font-weight: 800;
+      }
+
+      &__Domains {
+        font-weight: 200;
+      }
+    }
+
+    .FieldsBlock {
+      display: flex;
+      flex: 5;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .FieldsBlock__Row {
+        display: flex;
+        gap: 0.25rem;
+        width: 100%;
+
+        &:last-child {
+          margin-left: -7%;
+        }
+
+        .input__Wrapper {
+          flex: 2;
+          position: relative;
+  
+          &:nth-child(1), &:nth-child(3) {
+            flex: 3;
+          }
+
+          label {
+            font-size: 0.625rem;
+            left: 0.25rem;
+            position: absolute;
+            top: 0.25rem;
+            opacity: 80%;
+          }
+
+          input {
+            height: 40px;
+            padding-top: 15px;
+          }
+        }
+      }
+    }
+
+    .LevelBlock {
+      position: relative;
+      width: 90px;
+
+      .Shield__Wrapper {
+        position: relative;
+
+        img.shield_icon {
+          height: unset;
+          max-height: 90px;
+        }
+      }
+
+      label {
+        position: absolute;
+        bottom: 1rem;
+        background: #171717;
+        border-radius: 0.25rem;
+        text-transform: uppercase;
+        color: white;
+        text-align: center;
+        width: 100%;
+        left: 50%;
+        font-size: 0.625rem;
+        max-width: 90px;
+        transform: translateX(-50%)
+      }
+
+      input {
+        all: unset;
+        border: none;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+      }
     }
   }
 }
@@ -52,4 +138,10 @@
   .tox-edit-area {
     padding: 0 8px;
   }
+}
+
+img.shield_icon {
+  all: unset;
+  border: none;
+  width: 100%;
 }
