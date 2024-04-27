@@ -2,31 +2,37 @@
 
   {{!-- Sheet Header --}}
   <header class="sheet-header">
-    {{!-- <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/> --}}
+    {{!-- <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100"
+      width="100" /> --}}
     <div class="header-fields">
       <div class="ClassBlock">
-        <div class="ClassBlock__Title">sorcerer</div>
-        <div class="ClassBlock__Domains">arcana & midnight</div>
+        <div class="ClassBlock__Title">
+          <select name="dh_class">
+            {{log system.attributes.class}}
+            {{selectOptions classOptions selected=system.attributes.class.value}}
+          </select>
+        </div>
+        <div class="ClassBlock__Domains">{{system.attributes.domains.value}}</div>
       </div>
       <div class="FieldsBlock">
         <div class="FieldsBlock__Row">
           <div class="input__Wrapper">
             <label for="name" class="input__InnerLabel">name</label>
-            <input name="name" type="text" value="{{actor.name}}"/>
+            <input name="name" type="text" value="{{actor.name}}" />
           </div>
           <div class="input__Wrapper">
             <label for="pronouns" class="input__InnerLabel">pronouns</label>
-            <input name="pronouns" type="text" value="{{actor.pronouns}}"/>
+            <input name="pronouns" type="text" value="{{system.attributes.pronouns.value}}" />
           </div>
         </div>
         <div class="FieldsBlock__Row">
           <div class="input__Wrapper">
             <label for="heritage" class="input__InnerLabel">heritage</label>
-            <input name="heritage" type="text" value="{{actor.heritage}}"/>
+            <input name="heritage" type="text" value="{{system.attributes.heritage.value}}" />
           </div>
           <div class="input__Wrapper">
             <label for="subclass" class="input__InnerLabel">subclass</label>
-            <input name="subclass" type="text" value="{{actor.subclass}}"/>
+            <input name="subclass" type="text" value="{{system.attributes.subclass.value}}" />
           </div>
         </div>
       </div>
@@ -35,7 +41,8 @@
           <div class="Shield__Wrapper">
             {{> "systems/daggerheart/templates/actor/parts/shield.hbs"}}
             <label for="system.attributes.level.value" class="resource-label">Level</label>
-            <input type="text" name="system.attributes.level.value" value="{{system.attributes.level.value}}" data-dtype="Number"/>
+            <input type="text" name="system.attributes.level.value" value="{{system.attributes.level.value}}"
+              data-dtype="Number" />
           </div>
         </div>
       </div>
@@ -57,7 +64,8 @@
       <div class="abilities flexcol">
         {{#each system.abilities as |ability key|}}
         <div class="ability flexrow flex-group-center">
-          {{> "systems/daggerheart/templates/actor/parts/actor-attribute.hbs" ability=ability abilities=abilities key=key}}
+          {{> "systems/daggerheart/templates/actor/parts/actor-attribute.hbs" ability=ability abilities=abilities
+          key=key}}
         </div>
         {{/each}}
       </div>
@@ -68,7 +76,8 @@
       <section class="grid grid-3col">
         {{!-- For the main features list, span the right two columns --}}
         <section class="main grid-span-2">
-          {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
+          {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in
+          module/helpers/templates.mjs --}}
           {{> "systems/daggerheart/templates/actor/parts/actor-features.hbs"}}
         </section>
 
@@ -77,13 +86,14 @@
 
     {{!-- Biography Tab --}}
     <div class="tab biography" data-group="primary" data-tab="description">
-      {{!-- If you want TinyMCE editors to output inline rolls when rendered, you need to pass the actor's roll data to the rollData property. --}}
+      {{!-- If you want TinyMCE editors to output inline rolls when rendered, you need to pass the actor's roll data to
+      the rollData property. --}}
       {{editor system.biography target="system.biography" rollData=rollData button=true owner=owner editable=editable}}
     </div>
 
     {{!-- Owned Items Tab --}}
     <div class="tab items" data-group="primary" data-tab="items">
-       {{> "systems/daggerheart/templates/actor/parts/actor-items.hbs"}}
+      {{> "systems/daggerheart/templates/actor/parts/actor-items.hbs"}}
     </div>
 
     {{!-- Owned Spells Tab --}}
@@ -98,4 +108,3 @@
 
   </section>
 </form>
-

@@ -1,3 +1,4 @@
+import { DAGGERHEART } from '../helpers/config.mjs';
 import {
   onManageActiveEffect,
   prepareActiveEffectCategories,
@@ -45,6 +46,7 @@ export class DaggerheartActorSheet extends ActorSheet {
     // Add the actor's data to context.data for easier access, as well as flags.
     context.system = actorData.system;
     context.flags = actorData.flags;
+    context.classOptions = DAGGERHEART.classOptions
 
     // Prepare character data and items.
     if (actorData.type == 'character') {
@@ -242,5 +244,24 @@ export class DaggerheartActorSheet extends ActorSheet {
       });
       return roll;
     }
+  }
+
+  async _updateObject(event, formData) {
+    console.log(formData)
+    const pronouns = formData["pronouns"],
+      heritage = formData["heritage"],
+      subclass = formData["subclass"],
+      dhClass = formData["dh_class"],
+      domains = DAGGERHEART.pairedDomains[dhClass] || [];
+
+    const updateData = {
+      "system.attributes.pronouns.value" : pronouns,
+      "system.attributes.heritage.value" : heritage,
+      "system.attributes.subclass.value" : subclass,
+      "system.attributes.class.value"    : dhClass,
+      "system.attributes.domains.value"  : domains
+    };
+
+    return await this.object.update(updateData);
   }
 }

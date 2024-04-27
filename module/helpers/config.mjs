@@ -21,3 +21,39 @@ DAGGERHEART.abilityAbbreviations = {
   pre: 'DAGGERHEART.Ability.Pre.abbr',
   kno: 'DAGGERHEART.Ability.Kno.abbr',
 };
+
+DAGGERHEART.classOptions = {
+  bard     : 'bard',
+  druid    : 'druid',
+  guardian : 'guardian',
+  ranger   : 'ranger',
+  rogue    : 'rogue',
+  seraph   : 'seraph',
+  sorcerer : 'sorcerer',
+  warrior  : 'warrior',
+  wizard   : 'wizard'
+};
+
+DAGGERHEART.pairedDomains = {
+  bard     : ['grace', 'codex'],
+  druid    : ['sage', 'arcana'],
+  guardian : ['valor', 'blade'],
+  ranger   : ['bone', 'sage'],
+  rogue    : ['midnight', 'grace'],
+  seraph   : ['splendor', 'valor'],
+  sorcerer : ['arcana', 'midnight'],
+  warrior  : ['blade', 'bone'],
+  wizard   : ['codex', 'valor']
+};
+
+DAGGERHEART.subClasses = {
+  bard     : ['wordsmith', 'troubadour'],
+  druid    : ['warden of the elements', 'warden of renewal'],
+  guardian : ['stalward', 'vengeance'],
+  ranger   : ['beastbound', 'wayfinder'],
+  rogue    : ['syndicate', 'nightwalker'],
+  seraph   : ['divine wielder', 'winged sentinel'],
+  sorcerer : ['elemental origin', 'primal origin'],
+  warrior  : ['call of the brave', 'call of the slayer'],
+  wizard   : ['school of knowledge', 'school of war']
+};

@@ -11,6 +11,18 @@ export default class DaggerheartCharacter extends DaggerheartActorBase {
       level: new fields.SchemaField({
         value: new fields.NumberField({ ...requiredInteger, initial: 1 })
       }),
+      pronouns: new fields.SchemaField({
+        value: new fields.StringField({ required: true, blank: true})
+      }),
+      heritage: new fields.SchemaField({
+        value: new fields.StringField({ required: true, blank: true})
+      }),
+      subclass: new fields.SchemaField({
+        value: new fields.StringField({ required: true, blank: true})
+      }),
+      class: new fields.SchemaField({
+        value: new fields.StringField({ required: true, blank: true})
+      }),
     });
 
     // Iterate over ability names and create a new SchemaField for each.

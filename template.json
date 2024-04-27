@@ -20,27 +20,6 @@
     },
     "character": {
       "templates": ["base"],
-      "pronouns": "",
-      "heritage": "",
-      "class": "",
-      "subclass": "",
-      "armor_slots": {
-        "value": 6,
-        "min": 0,
-        "max": 12,
-        "pmax": 6
-      },
-      "hope": {
-        "value": 0,
-        "min": 0,
-        "max": 6
-      },
-      "experiences": [
-        {
-          "description": "Default Experience",
-          "bonus": 1
-        }
-      ],
       "attributes": {
         "level": {
           "value": 1
@@ -55,7 +34,36 @@
           "minor": 1,
           "major": 6,
           "severe": 12
-        }
+        },
+        "pronouns": {
+          "value": ""
+        },
+        "heritage": {
+          "value": ""
+        },
+        "class": {
+          "value": ""
+        },
+        "subclass": {
+          "value": ""
+        },
+        "armor_slots": {
+          "value": 6,
+          "min": 0,
+          "max": 12,
+          "pmax": 6
+        },
+        "hope": {
+          "value": 0,
+          "min": 0,
+          "max": 6
+        },
+        "experiences": [
+          {
+            "description": "Default Experience",
+            "bonus": 1
+          }
+        ]
       },
       "abilities": {
         "agi": {
