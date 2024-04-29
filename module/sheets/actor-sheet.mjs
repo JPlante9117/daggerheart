@@ -247,19 +247,29 @@ export class DaggerheartActorSheet extends ActorSheet {
   }
 
   async _updateObject(event, formData) {
-    console.log(formData)
+    super._updateObject(event, formData);
+
+    console.log(formData);
+  
     const pronouns = formData["pronouns"],
       heritage = formData["heritage"],
       subclass = formData["subclass"],
       dhClass = formData["dh_class"],
-      domains = DAGGERHEART.pairedDomains[dhClass] || [];
+      domains = DAGGERHEART.pairedDomains[dhClass] || [],
+      armorSlots = Object.fromEntries(Object.entries(formData).filter(([key, val])=> key.includes('armor_slot'))) || {},
+      uncheckedArmorSlots = Object.fromEntries(Object.entries(armorSlots).filter(([key, val]) => val == false)),
+      hasArmorSlots = Object.keys(uncheckedArmorSlots).length > 0,
+      armorSlotVal  = hasArmorSlots && Object.keys(uncheckedArmorSlots).length || 0;
+
+    console.log(armorSlots, armorSlotVal)
 
     const updateData = {
-      "system.attributes.pronouns.value" : pronouns,
-      "system.attributes.heritage.value" : heritage,
-      "system.attributes.subclass.value" : subclass,
-      "system.attributes.class.value"    : dhClass,
-      "system.attributes.domains.value"  : domains
+      "system.attributes.pronouns.value"    : pronouns,
+      "system.attributes.heritage.value"    : heritage,
+      "system.attributes.subclass.value"    : subclass,
+      "system.attributes.class.value"       : dhClass,
+      "system.attributes.domains.value"     : domains,
+      "system.attributes.armor_slots.value" : armorSlotVal
     };
 
     return await this.object.update(updateData);

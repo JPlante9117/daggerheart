@@ -233,13 +233,24 @@
   color: white;
   padding: 1rem;
   font-size: 1.25rem;
-  height: 90px;
+  min-height: 90px;
 }
 .daggerheart .sheet-header .header-fields .ClassBlock__Title {
   font-weight: 800;
 }
+.daggerheart .sheet-header .header-fields .ClassBlock__Title > select.dhClass {
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  height: 2.125rem;
+  font-size: 1.75rem;
+}
+.daggerheart .sheet-header .header-fields .ClassBlock__Title > select.dhClass option {
+  background-color: #171717;
+}
 .daggerheart .sheet-header .header-fields .ClassBlock__Domains {
   font-weight: 200;
+  padding-left: 0.25rem;
 }
 .daggerheart .sheet-header .header-fields .FieldsBlock {
   display: flex;
@@ -298,15 +309,6 @@
   max-width: 90px;
   transform: translateX(-50%);
 }
-.daggerheart .sheet-header .header-fields .LevelBlock input {
-  all: unset;
-  border: none;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-}
 .daggerheart .sheet-tabs {
   flex: 0;
 }
@@ -314,6 +316,77 @@
 .daggerheart .sheet-body .tab,
 .daggerheart .sheet-body .tab .editor {
   height: 100%;
+}
+.daggerheart .sheet-body.attributes .abilities, .daggerheart .sheet-body.attributes .armor_eva,
+.daggerheart .sheet-body .tab.attributes .abilities,
+.daggerheart .sheet-body .tab.attributes .armor_eva,
+.daggerheart .sheet-body .tab .editor.attributes .abilities,
+.daggerheart .sheet-body .tab .editor.attributes .armor_eva {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.daggerheart .sheet-body.attributes .abilities .ability, .daggerheart .sheet-body.attributes .abilities .evasion, .daggerheart .sheet-body.attributes .abilities .armor, .daggerheart .sheet-body.attributes .armor_eva .ability, .daggerheart .sheet-body.attributes .armor_eva .evasion, .daggerheart .sheet-body.attributes .armor_eva .armor,
+.daggerheart .sheet-body .tab.attributes .abilities .ability,
+.daggerheart .sheet-body .tab.attributes .abilities .evasion,
+.daggerheart .sheet-body .tab.attributes .abilities .armor,
+.daggerheart .sheet-body .tab.attributes .armor_eva .ability,
+.daggerheart .sheet-body .tab.attributes .armor_eva .evasion,
+.daggerheart .sheet-body .tab.attributes .armor_eva .armor,
+.daggerheart .sheet-body .tab .editor.attributes .abilities .ability,
+.daggerheart .sheet-body .tab .editor.attributes .abilities .evasion,
+.daggerheart .sheet-body .tab .editor.attributes .abilities .armor,
+.daggerheart .sheet-body .tab .editor.attributes .armor_eva .ability,
+.daggerheart .sheet-body .tab .editor.attributes .armor_eva .evasion,
+.daggerheart .sheet-body .tab .editor.attributes .armor_eva .armor {
+  width: 90px;
+}
+.daggerheart .sheet-body.attributes .abilities .armor_slots, .daggerheart .sheet-body.attributes .armor_eva .armor_slots,
+.daggerheart .sheet-body .tab.attributes .abilities .armor_slots,
+.daggerheart .sheet-body .tab.attributes .armor_eva .armor_slots,
+.daggerheart .sheet-body .tab .editor.attributes .abilities .armor_slots,
+.daggerheart .sheet-body .tab .editor.attributes .armor_eva .armor_slots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.daggerheart .sheet-body.attributes .Attribute__Wrapper,
+.daggerheart .sheet-body .tab.attributes .Attribute__Wrapper,
+.daggerheart .sheet-body .tab .editor.attributes .Attribute__Wrapper {
+  position: relative;
+  max-width: 90px;
+}
+.daggerheart .sheet-body.attributes .Attribute__Wrapper input[type=text],
+.daggerheart .sheet-body .tab.attributes .Attribute__Wrapper input[type=text],
+.daggerheart .sheet-body .tab .editor.attributes .Attribute__Wrapper input[type=text] {
+  text-align: center;
+}
+.daggerheart .sheet-body.attributes .Shield__Wrapper,
+.daggerheart .sheet-body .tab.attributes .Shield__Wrapper,
+.daggerheart .sheet-body .tab .editor.attributes .Shield__Wrapper {
+  position: relative;
+}
+.daggerheart .sheet-body.attributes .Shield__Wrapper img.shield_icon,
+.daggerheart .sheet-body .tab.attributes .Shield__Wrapper img.shield_icon,
+.daggerheart .sheet-body .tab .editor.attributes .Shield__Wrapper img.shield_icon {
+  height: unset;
+  max-height: 90px;
+}
+.daggerheart .sheet-body.attributes label,
+.daggerheart .sheet-body .tab.attributes label,
+.daggerheart .sheet-body .tab .editor.attributes label {
+  position: absolute;
+  top: 1.25rem;
+  background: #171717;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  width: 100%;
+  left: 50%;
+  font-size: 0.625rem;
+  max-width: 90px;
+  transform: translateX(-50%);
 }
 .daggerheart .tox .tox-editor-container {
   background: #fff;
@@ -324,6 +397,15 @@
 .daggerheart img.shield_icon {
   all: unset;
   border: none;
+  width: 100%;
+}
+.daggerheart input[type=text].absoluteTextField {
+  all: unset;
+  border: none;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
   width: 100%;
 }
 .daggerheart .resource-label {

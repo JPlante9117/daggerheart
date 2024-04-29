@@ -3,5 +3,5 @@
         {{> "systems/daggerheart/templates/actor/parts/shield.hbs"}}
     </div>
     <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="2d12+@abilities.{{key}}.mod" data-label="{{ability.label}}">{{ability.label}}</label>
-    <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
+    <input type="text" class="absoluteTextField" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
 </div>

@@ -29,14 +29,27 @@
       color: white;
       padding: 1rem;
       font-size: 1.25rem;
-      height: 90px;
+      min-height: 90px;
 
       &__Title {
         font-weight: 800;
+
+        > select.dhClass {
+          border: none;
+          color: white;
+          text-transform: uppercase;
+          height: 2.125rem;
+          font-size: 1.75rem;
+
+          option {
+            background-color: #171717;
+          }
+        }
       }
 
       &__Domains {
         font-weight: 200;
+        padding-left: 0.25rem;
       }
     }
 
@@ -106,16 +119,6 @@
         max-width: 90px;
         transform: translateX(-50%)
       }
-
-      input {
-        all: unset;
-        border: none;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 100%;
-      }
     }
   }
 }
@@ -128,6 +131,56 @@
 .sheet-body .tab,
 .sheet-body .tab .editor {
   height: 100%;
+
+  &.attributes {
+    .abilities, .armor_eva {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      flex-wrap: wrap;
+
+      .ability, .evasion, .armor {
+        width: 90px;
+      }
+
+      .armor_slots {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .Attribute__Wrapper {
+      position: relative;
+      max-width: 90px;
+
+      input[type="text"] {
+        text-align: center;
+      }
+    }
+
+    .Shield__Wrapper {
+      position: relative;
+  
+      img.shield_icon {
+        height: unset;
+        max-height: 90px;
+      }
+    }
+  
+    label {
+      position: absolute;
+      top: 1.25rem;
+      background: #171717;
+      border-radius: 0.25rem;
+      text-transform: uppercase;
+      color: white;
+      text-align: center;
+      width: 100%;
+      left: 50%;
+      font-size: 0.625rem;
+      max-width: 90px;
+      transform: translateX(-50%)
+    }
+  }
 }
 
 .tox {
@@ -143,5 +196,16 @@
 img.shield_icon {
   all: unset;
   border: none;
+  width: 100%;
+}
+
+
+input[type="text"].absoluteTextField {
+  all: unset;
+  border: none;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
   width: 100%;
 }

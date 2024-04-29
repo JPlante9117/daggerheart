@@ -7,12 +7,16 @@
     <div class="header-fields">
       <div class="ClassBlock">
         <div class="ClassBlock__Title">
-          <select name="dh_class">
+          <select class="dhClass" name="dh_class">
             {{log system.attributes.class}}
             {{selectOptions classOptions selected=system.attributes.class.value}}
           </select>
         </div>
-        <div class="ClassBlock__Domains">{{system.attributes.domains.value}}</div>
+        <div class="ClassBlock__Domains">
+          {{#each system.attributes.domains.value as |domain|}}
+            {{domain}}{{#unless @last}} & {{/unless}}
+          {{/each}}
+        </div>
       </div>
       <div class="FieldsBlock">
         <div class="FieldsBlock__Row">
@@ -41,7 +45,7 @@
           <div class="Shield__Wrapper">
             {{> "systems/daggerheart/templates/actor/parts/shield.hbs"}}
             <label for="system.attributes.level.value" class="resource-label">Level</label>
-            <input type="text" name="system.attributes.level.value" value="{{system.attributes.level.value}}"
+            <input type="text" class="absoluteTextField" name="system.attributes.level.value" value="{{system.attributes.level.value}}"
               data-dtype="Number" />
           </div>
         </div>
@@ -61,9 +65,30 @@
   {{!-- Sheet Body --}}
   <section class="sheet-body">
     <div class="tab attributes" data-group="primary" data-tab="attributes">
-      <div class="abilities flexcol">
+      <div class="armor_eva">
+        <div class="Attribute__Wrapper">
+          <div class="evasion">
+            {{> "systems/daggerheart/templates/actor/parts/shield.hbs"}}
+            <label for="system.attributes.evasion.value" class="resource-label">Evasion</label>
+            <input type="text" class="absoluteTextField" name="system.attributes.evasion.value" value="{{system.attributes.evasion.value}}"
+              data-dtype="Number" />
+          </div>
+        </div>
+        <div class="armor">
+          <div class="Attribute__Wrapper">
+            {{> "systems/daggerheart/templates/actor/parts/shield.hbs"}}
+            <label for="system.attributes.armor.value" class="resource-label">Armor</label>
+            <input type="text" class="absoluteTextField" name="system.attributes.armor.value" value="{{system.attributes.armor.value}}"
+              data-dtype="Number" />
+          </div>
+        </div>
+        <div class="armor_slots">
+          {{> "systems/daggerheart/templates/actor/parts/actor-checks.hbs" attr=system.attributes.armor_slots key="armor_slots"}}
+        </div>
+      </div>
+      <div class="abilities">
         {{#each system.abilities as |ability key|}}
-        <div class="ability flexrow flex-group-center">
+        <div class="ability">
           {{> "systems/daggerheart/templates/actor/parts/actor-attribute.hbs" ability=ability abilities=abilities
           key=key}}
         </div>
