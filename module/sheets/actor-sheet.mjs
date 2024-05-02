@@ -248,8 +248,6 @@ export class DaggerheartActorSheet extends ActorSheet {
 
   async _updateObject(event, formData) {
     super._updateObject(event, formData);
-
-    console.log(formData);
   
     const pronouns = formData["pronouns"],
       heritage = formData["heritage"],
@@ -257,11 +255,10 @@ export class DaggerheartActorSheet extends ActorSheet {
       dhClass = formData["dh_class"],
       domains = DAGGERHEART.pairedDomains[dhClass] || [],
       armorSlots = Object.fromEntries(Object.entries(formData).filter(([key, val])=> key.includes('armor_slot'))) || {},
-      uncheckedArmorSlots = Object.fromEntries(Object.entries(armorSlots).filter(([key, val]) => val == false)),
-      hasArmorSlots = Object.keys(uncheckedArmorSlots).length > 0,
-      armorSlotVal  = hasArmorSlots && Object.keys(uncheckedArmorSlots).length || 0;
-
-    console.log(armorSlots, armorSlotVal)
+      checkedArmorSlots = Object.fromEntries(Object.entries(armorSlots).filter(([key, val]) => val == true)),
+      maxArmorSlots =  this.object.system.attributes.armor_slots.pmax,
+      hasArmorSlots = Object.keys(checkedArmorSlots).length < maxArmorSlots,
+      armorSlotVal  = Object.keys(checkedArmorSlots).length;
 
     const updateData = {
       "system.attributes.pronouns.value"    : pronouns,

@@ -3,10 +3,10 @@
         {{#when @index 'gteq' ../attr.pmax}}
             <input name="{{../../key}}-{{@index}}" type="checkbox" disabled="true" />
         {{else}}
-            {{#when @index 'gt' ../../attr.value}}
-                <input name="{{../../key}}-{{@index}}" type="checkbox" checked="false"/>
+            {{#when @index 'lt' ../../attr.value}}
+                <input name="{{../../key}}-{{@index}}" type="checkbox" checked/>
             {{else}}
-                <input name="{{../../key}}-{{@index}}" type="checkbox" checked="true"/>
+                <input name="{{../../key}}-{{@index}}" type="checkbox"/>
             {{/when}}
         {{/when}}
     {{/times}}
