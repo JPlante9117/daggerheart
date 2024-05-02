@@ -144,8 +144,25 @@
       }
 
       .armor_slots {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        position: relative;
+        display: flex;
+
+        label {
+          position: relative;
+          writing-mode: vertical-rl;
+          text-orientation: upright;
+          width: 0.875rem;
+          letter-spacing: -0.25rem;
+          text-align: center;
+          max-width: unset;
+          left: 0;
+          top: 0;
+        }
+
+        &__checkboxes {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+        }
       }
     }
     .Attribute__Wrapper {

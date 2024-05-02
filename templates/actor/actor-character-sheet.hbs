@@ -64,34 +64,41 @@
   {{!-- Sheet Body --}}
   <section class="sheet-body">
     <div class="tab attributes" data-group="primary" data-tab="attributes">
-      <div class="armor_eva">
-        <div class="Attribute__Wrapper">
-          <div class="evasion">
-            {{> "systems/daggerheart/templates/actor/parts/shield.hbs"}}
-            <label for="system.attributes.evasion.value" class="resource-label">Evasion</label>
-            <input type="text" class="absoluteTextField" name="system.attributes.evasion.value" value="{{system.attributes.evasion.value}}"
-              data-dtype="Number" />
-          </div>
-        </div>
-        <div class="armor">
+      <div class="Attributes__Row">
+        <div class="armor_eva">
           <div class="Attribute__Wrapper">
-            {{> "systems/daggerheart/templates/actor/parts/shield.hbs"}}
-            <label for="system.attributes.armor.value" class="resource-label">Armor</label>
-            <input type="text" class="absoluteTextField" name="system.attributes.armor.value" value="{{system.attributes.armor.value}}"
-              data-dtype="Number" />
+            <div class="evasion">
+              <div class="Attribute__Wrapper">
+                {{> "systems/daggerheart/templates/actor/parts/shield.hbs"}}
+                <label for="system.attributes.evasion.value" class="resource-label">Evasion</label>
+                <input type="text" class="absoluteTextField" name="system.attributes.evasion.value" value="{{system.attributes.evasion.value}}"
+                  data-dtype="Number" />
+              </div>
+            </div>
+          </div>
+          <div class="armor">
+            <div class="Attribute__Wrapper">
+              {{> "systems/daggerheart/templates/actor/parts/shield.hbs"}}
+              <label for="system.attributes.armor.value" class="resource-label">Armor</label>
+              <input type="text" class="absoluteTextField" name="system.attributes.armor.value" value="{{system.attributes.armor.value}}"
+                data-dtype="Number" />
+            </div>
+          </div>
+          <div class="armor_slots">
+            <label for="system.attributes.armor_slots.value" class="resource-label">Armor Slots</label>
+            <div class="armor_slots__checkboxes">
+              {{> "systems/daggerheart/templates/actor/parts/actor-checks.hbs" attr=system.attributes.armor_slots key="armor_slots"}}
+            </div>
           </div>
         </div>
-        <div class="armor_slots">
-          {{> "systems/daggerheart/templates/actor/parts/actor-checks.hbs" attr=system.attributes.armor_slots key="armor_slots"}}
+        <div class="abilities">
+          {{#each system.abilities as |ability key|}}
+          <div class="ability">
+            {{> "systems/daggerheart/templates/actor/parts/actor-attribute.hbs" ability=ability abilities=abilities
+            key=key}}
+          </div>
+          {{/each}}
         </div>
-      </div>
-      <div class="abilities">
-        {{#each system.abilities as |ability key|}}
-        <div class="ability">
-          {{> "systems/daggerheart/templates/actor/parts/actor-attribute.hbs" ability=ability abilities=abilities
-          key=key}}
-        </div>
-        {{/each}}
       </div>
     </div>
 

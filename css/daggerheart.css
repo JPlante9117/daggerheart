@@ -347,6 +347,29 @@
 .daggerheart .sheet-body .tab.attributes .armor_eva .armor_slots,
 .daggerheart .sheet-body .tab .editor.attributes .abilities .armor_slots,
 .daggerheart .sheet-body .tab .editor.attributes .armor_eva .armor_slots {
+  position: relative;
+  display: flex;
+}
+.daggerheart .sheet-body.attributes .abilities .armor_slots label, .daggerheart .sheet-body.attributes .armor_eva .armor_slots label,
+.daggerheart .sheet-body .tab.attributes .abilities .armor_slots label,
+.daggerheart .sheet-body .tab.attributes .armor_eva .armor_slots label,
+.daggerheart .sheet-body .tab .editor.attributes .abilities .armor_slots label,
+.daggerheart .sheet-body .tab .editor.attributes .armor_eva .armor_slots label {
+  position: relative;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  width: 0.875rem;
+  letter-spacing: -0.25rem;
+  text-align: center;
+  max-width: unset;
+  left: 0;
+  top: 0;
+}
+.daggerheart .sheet-body.attributes .abilities .armor_slots__checkboxes, .daggerheart .sheet-body.attributes .armor_eva .armor_slots__checkboxes,
+.daggerheart .sheet-body .tab.attributes .abilities .armor_slots__checkboxes,
+.daggerheart .sheet-body .tab.attributes .armor_eva .armor_slots__checkboxes,
+.daggerheart .sheet-body .tab .editor.attributes .abilities .armor_slots__checkboxes,
+.daggerheart .sheet-body .tab .editor.attributes .armor_eva .armor_slots__checkboxes {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
